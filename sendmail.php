@@ -234,7 +234,7 @@ else {
 
 function sendmail_forgot($email){
 $mailTo = $email;
-$body = "<h2>Forgot Password Verifaction Link</h2>
+$body = "<h2>Forgot Password Verification Link</h2>
 <h5>Verify your email to change your password with the given link below</h5>
 <br/><br/>
 <a href='https://asuncion-clinic.herokuapp.com/changeforgot.php?error=$email'>Click Here</a></h1>";

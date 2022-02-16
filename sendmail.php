@@ -234,10 +234,10 @@ else {
 
 function sendmail_forgot($email){
 $mailTo = $email;
-$body = "<h2>You have registered in Asuncion Optical Webpage</h2>
-<h5>Verify your email to log in with the given link below</h5>
+$body = "<h2>Forgot Password Verifaction Link</h2>
+<h5>Verify your email to change your password with the given link below</h5>
 <br/><br/>
-<a href='http://asuncion-clinic.herokuapp.com/changeforgot.php?error=$email'>Click Here</a></h1>";
+<a href='https://asuncion-clinic.herokuapp.com/changeforgot.php?error=$email'>Click Here</a></h1>";
 
 $mail = new PHPMailer(true);
 //$mail = new PHPMailer\PHPMailer\PHPMailer;
@@ -281,7 +281,7 @@ $mailTo = $email;
 $body = "<h2>You have registered in Asuncion Optical Webpage</h2>
 <h5>Verify your email to log in with the given link below</h5>
 <br/><br/>
-<a href='http://asuncion-clinic.herokuapp.com/main/includes/verify.php?vkey=$vkey'>Click Here</a></h1>";
+<a href='https://asuncion-clinic.herokuapp.com/main/includes/verify.php?vkey=$vkey'>Click Here</a></h1>";
 
 $mail = new PHPMailer(true);
 //$mail = new PHPMailer\PHPMailer\PHPMailer;

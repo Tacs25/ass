@@ -237,7 +237,7 @@ $mailTo = $email;
 $body = "<h2>You have registered in Asuncion Optical Webpage</h2>
 <h5>Verify your email to log in with the given link below</h5>
 <br/><br/>
-<a href='http://localhost/ass/changeforgot.php?error=$email'>Click Here</a></h1>";
+<a href='http://ass/changeforgot.php?error=$email'>Click Here</a></h1>";
 
 $mail = new PHPMailer(true);
 //$mail = new PHPMailer\PHPMailer\PHPMailer;
@@ -281,7 +281,7 @@ $mailTo = $email;
 $body = "<h2>You have registered in Asuncion Optical Webpage</h2>
 <h5>Verify your email to log in with the given link below</h5>
 <br/><br/>
-<a href='http://localhost/ass/main/includes/verify.php?vkey=$vkey'>Click Here</a></h1>";
+<a href='http://ass/main/includes/verify.php?vkey=$vkey'>Click Here</a></h1>";
 
 $mail = new PHPMailer(true);
 //$mail = new PHPMailer\PHPMailer\PHPMailer;

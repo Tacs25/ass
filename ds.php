@@ -323,7 +323,8 @@ include_once 'main/includes/dbh.inc.php'
         $('#datepicker1, #datepicker2').datetimepicker({
             stepping: 5, 
             enabledHours: [9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
-            format: 'HH:mm ',
+            // format: 'HH:mm ',
+            format: 'hh:mm a',
             ignoreReadonly: true
         });
 

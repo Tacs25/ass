@@ -31,7 +31,7 @@
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                <a class="nav-link" aria-current="page" href="#home">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#about">About</a>
@@ -71,7 +71,7 @@
     </nav>
 
       <!-- Carousel-->
-      <div id="home">
+      <section id="home">
         <div id="carouselExampleCaptions" class="carousel slide carousel-fade carousel-dark" data-bs-ride="carousel">
           <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -110,10 +110,10 @@
             <span class="visually-hidden">Next</span>
           </button>
         </div>
-      </div>
+      </section>
 
       <!-- About -->
-      <div id="about" class="container mt-5 pb-5">
+      <section id="about" class="container mt-5 pb-5">
         <div class="post-heading text-center" data-aos="zoom-in">
           <h3 class="display-4 font-weight-bold">About Us</h3>
           <hr class="w-50 mx-auto pb-1">
@@ -152,12 +152,12 @@
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
       </div>
 
       <!-- Services -->
-      <div id="services" class="container mt-1 mb-5" data-aos="zoom-in">
+      <section id="services" class="container mt-1 mb-5" data-aos="zoom-in">
         <div class="post-heading text-center">
           <h3 class="display-4 font-weight-bold">Our Services</h3>
           <hr class="w-50 mx-auto pb-1">
@@ -188,10 +188,10 @@
         <div class="d-grid gap-2 col-6 mx-auto pt-5" data-aos="zoom-in">
           <a class="btn btn-dark" type="button" href="main/signup.php">Create an account</a>
         </div>
-      </div>
+      </section>
 
       <!-- testimonials -->
-      <div id="services" class="container mt-1 mb-5" data-aos="zoom-in">
+      <section id="services" class="container mt-1 mb-5" data-aos="zoom-in">
         <div class="post-heading text-center">
           <h3 class="display-4 font-weight-bold">Testimonials</h3>
           <hr class="w-50 mx-auto pb-1">
@@ -223,7 +223,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
       
       <!--map-->
       <section id="map" class="pl-4 pr-4" data-aos="zoom-in">
@@ -232,7 +232,7 @@
         
        <!--footer-->
 
-       <div id="contact" class="mt-2">
+       <section id="contact" class="mt-2">
       <footer class="text-center text-lg-start bg-light text-muted" >
         <!-- Section: Social media -->
         <section
@@ -358,7 +358,7 @@
         </div>
         <!-- Copyright -->
       </footer>
-      </div>
+      </section>
       <!-- Footer -->
       <!--scroll top-->
       <button id="topbtn"><i class="fas fa-arrow-circle-up"></i></button>
@@ -389,6 +389,7 @@
     <!--aos js link-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
+    <script src="js/active.js"></script>
     <script>
     
 

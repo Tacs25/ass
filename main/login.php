@@ -23,7 +23,6 @@
 							<label>Password</label>
 							<div class="input-group">
 							<input type="password" name="patient_password" id="patient_password" class="form-control" required  data-parsley-trigger="keyup" />
-							<input type="password" name="patient_password" id="patient_password" class="form-control" required  data-parsley-trigger="keyup" />
 							<div class="input-group-prepend">
 								<div class="input-group-text">
 									<a href="#" class="text-dark" id="icon-click">

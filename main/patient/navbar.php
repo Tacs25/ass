@@ -7,8 +7,8 @@ if(isset($_SESSION['id'])){
 ?>
 
 
-<div class="alert alert-warning" role="alert">
-  				<b>Reminder: Bring your Vaccine Card on Appointment day </b> <br>
+<div class="alert alert-warning mt-4" role="alert">
+  				<b>Reminder: Bring your Vaccine Card on Appointment day. </b> <br>
 				 
 			
 		</div>

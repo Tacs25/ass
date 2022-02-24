@@ -22,7 +22,7 @@
 </head>
 <body>
     <!-- nav bar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" id="navbar-example2">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" >
         <div class="container">
           <a class="navbar-brand" href="index.php" ><img src="img/eyel.png" alt="logo" height="50"><span style="color: blue; font-weight: bolder;" >A</span>suncion <span style="color: blue; font-weight: bolder;">O</span>ptical</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -71,7 +71,6 @@
     </nav>
 
       <!-- Carousel-->
-      <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" class="scrollspy-example" tabindex="0">
       <div id="home">
         <div id="carouselExampleCaptions" class="carousel slide carousel-fade carousel-dark" data-bs-ride="carousel">
           <div class="carousel-indicators">

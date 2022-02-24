@@ -23,9 +23,9 @@ function navHighlighter() {
             scrollY > sectionTop &&
             scrollY <= sectionTop + sectionHeight
         ) {
-            document.querySelector(".navigation a[href*=" + sectionId + "]").classList.add("active");
+            document.querySelector(".navbar a[href*=" + sectionId + "]").classList.add("active");
         } else {
-            document.querySelector(".navigation a[href*=" + sectionId + "]").classList.remove("active");
+            document.querySelector(".navbar a[href*=" + sectionId + "]").classList.remove("active");
         }
     });
 }

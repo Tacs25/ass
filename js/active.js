@@ -14,9 +14,9 @@ window.addEventListener("scroll", () => {
         }
     })
     navLi.forEach(li => {
-        li.classlist.remove('active');
-        if (li.classlist.contains(current)) {
-            li.classlist.add('active')
+        li.classList.remove('active');
+        if (li.classList.contains(current)) {
+            li.classList.add('active')
 
         }
     })

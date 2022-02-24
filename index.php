@@ -356,7 +356,8 @@
         <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
           © 2021 Copyright:
           <a class="text-reset fw-bold" href="index.php">Asuncion Optical</a>
-        </div>
+        
+
         <!-- Copyright -->
       </footer>
       </section>
@@ -364,7 +365,8 @@
       <!--scroll top-->
       <button id="topbtn"><i class="fas fa-arrow-circle-up"></i></button>
       <!--scroll top-->
-      
+    </div>
+    </div>
       <?php 
 				if (isset($_GET["error"])){
 					if ($_GET["error"] === "none"){

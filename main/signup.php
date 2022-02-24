@@ -21,6 +21,9 @@
 						<div class="form-group">
 							<label>Patient Password<span class="text-danger"></label>
 							<input type="password" name="patient_password" id="patient_password" class="form-control" required  />
+							<div class="input-group-append">
+								<div class="input-group-text"><i class="fa fa-eye"></i></div>
+							</div>
 						</div>
 						<div class="form-group">
 							<label>Confirm Password<span class="text-danger"></label>

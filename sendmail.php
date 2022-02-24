@@ -82,7 +82,7 @@ function sendmail_getmail($email, $id, $appid, $idd, $sched, $startt, $endd){
     $mail->Port = "2525";
     
     $mail->From = "jan-jan.riparip.student@access.edu.ph";
-    $mail->FromName = "ZanReno";
+    $mail->FromName = "AsuncionAdmin";
     
     $mail->addAddress($mailTo, "Zan");
     
@@ -102,7 +102,7 @@ function sendmail_getmail($email, $id, $appid, $idd, $sched, $startt, $endd){
 }
 
 function sendmail_usercanc($id, $idd,$sched){
-    $mailTo = "zanreno1085@yahoo.com";
+    $mailTo = "asuncion.optical.clinic@gmail.com";
     $body = "<h2>The User with a User ID of #$idd </h2>
     <h5>Has canceled an appointment booking at this date $sched</h5>
     <h5>With a booking Id of #$id</h5>
@@ -126,7 +126,7 @@ function sendmail_usercanc($id, $idd,$sched){
     $mail->Port = "2525";
     
     $mail->From = "jan-jan.riparip.student@access.edu.ph";
-    $mail->FromName = "ZanReno";
+    $mail->FromName = "Client";
     
     $mail->addAddress($mailTo, "Zan");
     
@@ -146,7 +146,7 @@ function sendmail_usercanc($id, $idd,$sched){
 }
 
 function sendmail_book($id, $idd,$sched){
-    $mailTo = "zanreno1085@yahoo.com";
+    $mailTo = "asuncion.optical.clinic@gmail.com";
     $body = "<h2>The User with a User ID of #$idd </h2>
     <h5>Has booked an appointment at this date $sched</h5>
     <h5>With an appointment Id of #$id</h5>
@@ -170,7 +170,7 @@ function sendmail_book($id, $idd,$sched){
     $mail->Port = "2525";
     
     $mail->From = "jan-jan.riparip.student@access.edu.ph";
-    $mail->FromName = "ZanReno";
+    $mail->FromName = "Client";
     
     $mail->addAddress($mailTo, "Zan");
     
@@ -213,7 +213,7 @@ $mail->SMTPSecure = "tls";
 $mail->Port = "2525";
 
 $mail->From = "jan-jan.riparip.student@access.edu.ph";
-$mail->FromName = "ZanReno";
+$mail->FromName = "AsuncionAdmin";
 
 $mail->addAddress($mailTo, "Zan");
 
@@ -257,7 +257,7 @@ $mail->SMTPSecure = "tls";
 $mail->Port = "2525";
 
 $mail->From = "jan-jan.riparip.student@access.edu.ph";
-$mail->FromName = "ZanReno";
+$mail->FromName = "AsuncionAdmin";
 
 $mail->addAddress($mailTo, "Zan");
 
@@ -301,7 +301,7 @@ $mail->SMTPSecure = "tls";
 $mail->Port = "2525";
 
 $mail->From = "jan-jan.riparip.student@access.edu.ph";
-$mail->FromName = "ZanReno";
+$mail->FromName = "AsuncionAdmin";
 
 $mail->addAddress($mailTo, "Zan");
 

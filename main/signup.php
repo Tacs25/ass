@@ -19,13 +19,32 @@
 							<input type="text" name="patient_email_address" id="patient_email_address" class="form-control" required />
 						</div>
 						<div class="form-group">
+
 							<label>Patient Password<span class="text-danger"></label>
+							<div class="input-group">
 							<input type="password" name="patient_password" id="patient_password" class="form-control" required  />
-							
+							<div class="input-group-prepend">
+								<div class="input-group-text">
+									<a href="#" class="text-dark" id="icon-click">
+										<i class="fas fa-eye" id="icon"></i>
+									</a>
+								</div>
+								</div>
+							</div>
 						</div>
 						<div class="form-group">
+
 							<label>Confirm Password<span class="text-danger"></label>
+							<div class="input-group">
 							<input type="password" name="patient_passwordrp" id="patient_passwordrp" class="form-control" required  />
+							<div class="input-group-prepend">
+							<div class="input-group-text">
+									<a href="#" class="text-dark" id="icon-click1">
+										<i class="fas fa-eye" id="icon1"></i>
+									</a>
+								</div>
+								</div>
+							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-6">
@@ -121,6 +140,41 @@
 </div> 
 </div>
 </div>  
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		
+		$("#icon-click").click(function(){
+			$("#icon").toggleClass('fa-eye-slash');
+
+			var input = $("#patient_password");
+			if(input.attr("type") === "password"){
+				input.attr("type","text");
+			}
+			else
+			{
+				input.attr("type","password");
+			}
+			
+		});
+		$("#icon-click1").click(function(){
+			$("#icon1").toggleClass('fa-eye-slash');
+
+			var input = $("#patient_passwordrp");
+			if(input.attr("type") === "password"){
+				input.attr("type","text");
+			}
+			else
+			{
+				input.attr("type","password");
+			}
+			
+			
+		});
+	});
+
+</script>
 
 
 <?php

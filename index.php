@@ -232,7 +232,7 @@
         
        <!--footer-->
 
-       <section id="contact" class="mt-2">
+       <section id="" class="mt-2">
       <footer class="text-center text-lg-start bg-light text-muted" >
         <!-- Section: Social media -->
         <div
@@ -264,7 +264,7 @@
         <!-- Section: Social media -->
 
         <!-- Section: Links  -->
-        <section class="">
+        <section id="contact">
           <div class="container text-center text-md-start mt-5" data-aos="zoom-in">
             <!-- Grid row -->
             <div class="row mt-3">

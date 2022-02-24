@@ -74,14 +74,14 @@ function sendmail_getmail($email, $id, $appid, $idd, $sched, $startt, $endd){
     $mail->Host = "mail.smtp2go.com";
     $mail->SMTPAuth = true;
     
-    $mail->Username = "booking2252";
-    $mail->Password = "appointment123";
+    $mail->Username = "janjan123";
+    $mail->Password = "wagubusin123";
     
     $mail->SMTPSecure = "tls";
     
     $mail->Port = "2525";
     
-    $mail->From = "adrian.tacdol.student@access.edu.ph";
+    $mail->From = "jan-jan.riparip.student@access.edu.ph";
     $mail->FromName = "ZanReno";
     
     $mail->addAddress($mailTo, "Zan");
@@ -118,14 +118,14 @@ function sendmail_usercanc($id, $idd,$sched){
     $mail->Host = "mail.smtp2go.com";
     $mail->SMTPAuth = true;
     
-    $mail->Username = "booking2252";
-    $mail->Password = "appointment123";
+    $mail->Username = "janjan123";
+    $mail->Password = "wagubusin123";
     
     $mail->SMTPSecure = "tls";
     
     $mail->Port = "2525";
     
-    $mail->From = "adrian.tacdol.student@access.edu.ph";
+    $mail->From = "jan-jan.riparip.student@access.edu.ph";
     $mail->FromName = "ZanReno";
     
     $mail->addAddress($mailTo, "Zan");
@@ -162,14 +162,14 @@ function sendmail_book($id, $idd,$sched){
     $mail->Host = "mail.smtp2go.com";
     $mail->SMTPAuth = true;
     
-    $mail->Username = "booking2252";
-    $mail->Password = "appointment123";
+    $mail->Username = "janjan123";
+    $mail->Password = "wagubusin123";
     
     $mail->SMTPSecure = "tls";
     
     $mail->Port = "2525";
     
-    $mail->From = "adrian.tacdol.student@access.edu.ph";
+    $mail->From = "jan-jan.riparip.student@access.edu.ph";
     $mail->FromName = "ZanReno";
     
     $mail->addAddress($mailTo, "Zan");
@@ -205,14 +205,14 @@ $mail->isSMTP();
 $mail->Host = "mail.smtp2go.com";
 $mail->SMTPAuth = true;
 
-$mail->Username = "booking2252";
-$mail->Password = "appointment123";
+$mail->Username = "janjan123";
+$mail->Password = "wagubusin123";
 
 $mail->SMTPSecure = "tls";
 
 $mail->Port = "2525";
 
-$mail->From = "adrian.tacdol.student@access.edu.ph";
+$mail->From = "jan-jan.riparip.student@access.edu.ph";
 $mail->FromName = "ZanReno";
 
 $mail->addAddress($mailTo, "Zan");
@@ -249,14 +249,14 @@ $mail->isSMTP();
 $mail->Host = "mail.smtp2go.com";
 $mail->SMTPAuth = true;
 
-$mail->Username = "booking2252";
-$mail->Password = "appointment123";
+$mail->Username = "janjan123";
+$mail->Password = "wagubusin123";
 
 $mail->SMTPSecure = "tls";
 
 $mail->Port = "2525";
 
-$mail->From = "adrian.tacdol.student@access.edu.ph";
+$mail->From = "jan-jan.riparip.student@access.edu.ph";
 $mail->FromName = "ZanReno";
 
 $mail->addAddress($mailTo, "Zan");
@@ -293,14 +293,14 @@ $mail->isSMTP();
 $mail->Host = "mail.smtp2go.com";
 $mail->SMTPAuth = true;
 
-$mail->Username = "booking2252";
-$mail->Password = "appointment123";
+$mail->Username = "janjan123";
+$mail->Password = "wagubusin123";
 
 $mail->SMTPSecure = "tls";
 
 $mail->Port = "2525";
 
-$mail->From = "adrian.tacdol.student@access.edu.ph";
+$mail->From = "jan-jan.riparip.student@access.edu.ph";
 $mail->FromName = "ZanReno";
 
 $mail->addAddress($mailTo, "Zan");

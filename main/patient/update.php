@@ -123,7 +123,7 @@ session_start();
 		$("#icon-click1").click(function(){
 			$("#icon1").toggleClass('fa-eye-slash');
 
-			var input = $("#new_passwordrp");
+			var input = $("#new_password");
 			if(input.attr("type") === "password"){
 				input.attr("type","text");
 			}
@@ -137,7 +137,7 @@ session_start();
 		$("#icon-click2").click(function(){
 			$("#icon2").toggleClass('fa-eye-slash');
 
-			var input = $("#repeat_passwordrp");
+			var input = $("#repeat_password");
 			if(input.attr("type") === "password"){
 				input.attr("type","text");
 			}

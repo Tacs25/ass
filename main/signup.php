@@ -21,7 +21,7 @@
 						<div class="form-group">
 							<label>Patient Password<span class="text-danger"></label>
 							<input type="password" name="patient_password" id="patient_password" class="form-control" required  />
-							</div>
+							
 						</div>
 						<div class="form-group">
 							<label>Confirm Password<span class="text-danger"></label>

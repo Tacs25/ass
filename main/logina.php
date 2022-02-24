@@ -83,7 +83,7 @@
 		$("#icon-click").click(function(){
 			$("#icon").toggleClass('fa-eye-slash');
 
-			var input = $("#patient_password");
+			var input = $("#admin_password");
 			if(input.attr("type") === "password"){
 				input.attr("type","text");
 			}

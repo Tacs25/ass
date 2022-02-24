@@ -47,7 +47,7 @@
                             <td><input type="hidden" name="endd" value="<?php echo $row['end_time'];?>">
 							<?php 	$timeee = date_create($row ['end_time']);
 									echo date_format($timeee, 'h:i:A');?></td>
-                            <td><input type="hidden" name="stats" value="<?php echo $row['status'];?>"><?php echo $row['status'];?></td>
+                            <td><input type="hidden" name="stats" value="<?php echo $row['status'];?>"> <span class="badge badge-pill badge-primary"><?php echo $row['status'];?></span></td>
 							<?php if($row['status'] === 'booked'){?>
 							<td><input type="submit" name ="getmail" class="btn btn-primary" value ="Get Email"/></td>
 							<td><button type="button" name ="cancel" class="btn btn-danger" value ="cancel" data-bs-toggle="modal" data-bs-target="#cancelmodal">Cancel</button></td>

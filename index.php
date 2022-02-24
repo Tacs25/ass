@@ -20,7 +20,7 @@
     
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
-<body>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
     <!-- nav bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
         <div class="container">
@@ -71,7 +71,7 @@
     </nav>
 
       <!-- Carousel-->
-      <section id="home">
+      <div id="home">
         <div id="carouselExampleCaptions" class="carousel slide carousel-fade carousel-dark" data-bs-ride="carousel">
           <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -110,10 +110,10 @@
             <span class="visually-hidden">Next</span>
           </button>
         </div>
-      </section>
+      </div>
 
       <!-- About -->
-      <section id="about" class="container mt-5 pb-5">
+      <div id="about" class="container mt-5 pb-5">
         <div class="post-heading text-center" data-aos="zoom-in">
           <h3 class="display-4 font-weight-bold">About Us</h3>
           <hr class="w-50 mx-auto pb-1">
@@ -152,12 +152,12 @@
               </div>
             </div>
           </div>
-        </section>
+        </div>
 
       </div>
 
       <!-- Services -->
-      <section id="services" class="container mt-1 mb-5" data-aos="zoom-in">
+      <div id="services" class="container mt-1 mb-5" data-aos="zoom-in">
         <div class="post-heading text-center">
           <h3 class="display-4 font-weight-bold">Our Services</h3>
           <hr class="w-50 mx-auto pb-1">
@@ -188,7 +188,7 @@
         <div class="d-grid gap-2 col-6 mx-auto pt-5" data-aos="zoom-in">
           <a class="btn btn-dark" type="button" href="main/signup.php">Create an account</a>
         </div>
-      </section>
+      </div>
 
       <!-- testimonials -->
       <section id="" class="container mt-1 mb-5" data-aos="zoom-in">
@@ -264,7 +264,7 @@
         <!-- Section: Social media -->
 
         <!-- Section: Links  -->
-        <section id="contact">
+        <div id="contact">
           <div class="container text-center text-md-start mt-5" data-aos="zoom-in">
             <!-- Grid row -->
             <div class="row mt-3">
@@ -348,7 +348,7 @@
             </div>
             <!-- Grid row -->
           </div>
-        </section>
+        </div>
         <!-- Section: Links  -->
 
         <!-- Copyright -->
@@ -389,7 +389,7 @@
     <!--aos js link-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
-    <script src="js/active.js"></script>
+    <!-- <script src="js/active.js"></script> -->
     <script>
     
 

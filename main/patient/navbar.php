@@ -7,6 +7,11 @@ if(isset($_SESSION['id'])){
 ?>
 
 
+<div class="alert alert-warning" role="alert">
+  				<b>Reminder: Bring your Vaccine Card on Appointment day </b> <br>
+				 
+			
+		</div>
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark mt-4">
   		<!-- Brand -->
   		<a class="navbar-brand" href="#"><?php echo $row['First_Name']?> <?php echo $row['Last_Name']?></a>

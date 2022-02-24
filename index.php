@@ -235,7 +235,7 @@
        <section id="contact" class="mt-2">
       <footer class="text-center text-lg-start bg-light text-muted" >
         <!-- Section: Social media -->
-        <section
+        <div
           class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
           data-aos="zoom-in">
           <!-- Left -->
@@ -260,7 +260,7 @@
            
           </div>
           <!-- Right -->
-        </section>
+        </div>
         <!-- Section: Social media -->
 
         <!-- Section: Links  -->

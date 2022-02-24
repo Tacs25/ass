@@ -44,7 +44,7 @@
                             <td><input type="hidden" name="end_time" value="<?php echo $row['end_time'];?>">
 							<?php 	$timeee = date_create($row ['end_time']);
 									echo date_format($timeee, 'h:i:A');?></td>
-							<td><input type="hidden" name="status" value="<?php echo $row['status'];?>"><?php echo $row['status'];?></td>
+							<td><input type="hidden" name="status" value="<?php echo $row['status'];?>"><span class="badge badge-pill badge-success"><?php echo $row['status'];?> </span></td>
 							<td><button type="button" name ="booking" class="btn btn-primary" value ="Book" data-bs-toggle="modal" data-bs-target="#bookmodal">Book</button></td>
 
 							<div class="modal fade" tabindex="-1" id="bookmodal">

@@ -26,7 +26,7 @@
 							<div class="input-group-prepend">
 								<div class="input-group-text">
 									<a href="#" class="text-dark" id="icon-click">
-										<i class="fas fa-eye" id="icon"></i>
+										<i class="fa-eye-slash" id="icon"></i>
 									</a>
 								</div>
 								</div>
@@ -40,7 +40,7 @@
 							<div class="input-group-prepend">
 							<div class="input-group-text">
 									<a href="#" class="text-dark" id="icon-click1">
-										<i class="fas fa-eye" id="icon1"></i>
+										<i class="fa-eye-slash" id="icon1"></i>
 									</a>
 								</div>
 								</div>
@@ -146,7 +146,7 @@
 	$(document).ready(function(){
 		
 		$("#icon-click").click(function(){
-			$("#icon").toggleClass('fa-eye-slash');
+			$("#icon").toggleClass('fas fa-eye');
 
 			var input = $("#patient_password");
 			if(input.attr("type") === "password"){
@@ -159,7 +159,7 @@
 			
 		});
 		$("#icon-click1").click(function(){
-			$("#icon1").toggleClass('fa-eye-slash');
+			$("#icon1").toggleClass('fas fa-eye');
 
 			var input = $("#patient_passwordrp");
 			if(input.attr("type") === "password"){

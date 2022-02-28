@@ -192,7 +192,7 @@ include_once 'main/includes/dbh.inc.php'
                             </div>
                             <div class="modal-footer">
                               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                              <input type="submit" name ="booking" class="btn btn-primary" value ="Save changes"/>
+                              <input type="submit" name ="booking" class="btn btn-primary" value ="Add schedule"/>
                             </div>
                           </div>
                         </div>

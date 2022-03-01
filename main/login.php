@@ -72,6 +72,13 @@
 									</script>
 								<?php
 								}
+								else if ($_GET["error"] === "youneedtoverify"){
+									?>
+									<script>
+									swal("You need to verify your email", "", "warning");
+									</script>
+								<?php
+								}
 							}
 							?>
 					</form>

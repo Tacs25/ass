@@ -3,9 +3,9 @@ require __DIR__.'/PHPMailer/src/Exception.php';
 require __DIR__.'/PHPMailer/src/PHPMailer.php';
 require __DIR__.'/PHPMailer/src/SMTP.php';
 
-    use PHPMailer\PHPMailer\PHPMailer;
-    use PHPMailer\PHPMailer\Exception;
-    use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
 
 
 //require('/PHPMailer/src/PHPMailer.php');
@@ -71,20 +71,25 @@ function sendmail_getmail($email, $id, $appid, $idd, $sched, $startt, $endd){
     
     $mail->isSMTP();
     
-    $mail->Host = "mail.smtp2go.com";
+    $mail->Host = "smtp.gmail.com";
     $mail->SMTPAuth = true;
     
-    $mail->Username = "janjan123";
-    $mail->Password = "wagubusin123";
+    $mail->Username = "zanreno06@gmail.com";
+    $mail->Password = "ecaabcwxcnzojaxt";
     
     $mail->SMTPSecure = "tls";
     
-    $mail->Port = "2525";
+    $mail->Port = "587";
     
-    $mail->From = "jan-jan.riparip.student@access.edu.ph";
+    $mail->From = "zanreno06@gmail.com";
     $mail->FromName = "AsuncionAdmin";
     
     $mail->addAddress($mailTo, "Zan");
+    $mail->SMTPOptions=array('ssl'=>array(
+        'verify_peer'=>false,
+        'verify_peer_name'=>false,
+        'allow_self_signed'=>false
+    ));
     
     $mail->isHTML(true);
     
@@ -115,20 +120,25 @@ function sendmail_usercanc($id, $idd,$sched){
     
     $mail->isSMTP();
     
-    $mail->Host = "mail.smtp2go.com";
+    $mail->Host = "smtp.gmail.com";
     $mail->SMTPAuth = true;
     
-    $mail->Username = "janjan123";
-    $mail->Password = "wagubusin123";
+    $mail->Username = "zanreno06@gmail.com";
+    $mail->Password = "ecaabcwxcnzojaxt";
     
     $mail->SMTPSecure = "tls";
     
-    $mail->Port = "2525";
+    $mail->Port = "587";
     
     $mail->From = "jan-jan.riparip.student@access.edu.ph";
     $mail->FromName = "Client";
     
     $mail->addAddress($mailTo, "Zan");
+    $mail->SMTPOptions=array('ssl'=>array(
+        'verify_peer'=>false,
+        'verify_peer_name'=>false,
+        'allow_self_signed'=>false
+    ));
     
     $mail->isHTML(true);
     
@@ -159,20 +169,25 @@ function sendmail_book($id, $idd,$sched){
     
     $mail->isSMTP();
     
-    $mail->Host = "mail.smtp2go.com";
+    $mail->Host = "smtp.gmail.com";
     $mail->SMTPAuth = true;
     
-    $mail->Username = "janjan123";
-    $mail->Password = "wagubusin123";
+    $mail->Username = "zanreno06@gmail.com";
+    $mail->Password = "ecaabcwxcnzojaxt";
     
     $mail->SMTPSecure = "tls";
     
-    $mail->Port = "2525";
+    $mail->Port = "587";
     
-    $mail->From = "jan-jan.riparip.student@access.edu.ph";
+    $mail->From = "zanreno06@gmail.com";
     $mail->FromName = "Client";
     
     $mail->addAddress($mailTo, "Zan");
+    $mail->SMTPOptions=array('ssl'=>array(
+        'verify_peer'=>false,
+        'verify_peer_name'=>false,
+        'allow_self_signed'=>false
+    ));
     
     $mail->isHTML(true);
     
@@ -202,20 +217,25 @@ $mail = new PHPMailer(true);
 
 $mail->isSMTP();
 
-$mail->Host = "mail.smtp2go.com";
+$mail->Host = "smtp.gmail.com";
 $mail->SMTPAuth = true;
 
-$mail->Username = "janjan123";
-$mail->Password = "wagubusin123";
+$mail->Username = "zanreno06@gmail.com";
+$mail->Password = "ecaabcwxcnzojaxt";
 
 $mail->SMTPSecure = "tls";
 
-$mail->Port = "2525";
+$mail->Port = "587";
 
-$mail->From = "jan-jan.riparip.student@access.edu.ph";
+$mail->From = "zanreno06@gmail.com";
 $mail->FromName = "AsuncionAdmin";
 
 $mail->addAddress($mailTo, "Zan");
+$mail->SMTPOptions=array('ssl'=>array(
+    'verify_peer'=>false,
+    'verify_peer_name'=>false,
+    'allow_self_signed'=>false
+));
 
 $mail->isHTML(true);
 
@@ -246,20 +266,25 @@ $mail = new PHPMailer(true);
 
 $mail->isSMTP();
 
-$mail->Host = "mail.smtp2go.com";
+$mail->Host = "smtp.gmail.com";
 $mail->SMTPAuth = true;
 
-$mail->Username = "janjan123";
-$mail->Password = "wagubusin123";
+$mail->Username = "zanreno06@gmail.com";
+$mail->Password = "ecaabcwxcnzojaxt";
 
 $mail->SMTPSecure = "tls";
 
-$mail->Port = "2525";
+$mail->Port = "587";
 
-$mail->From = "jan-jan.riparip.student@access.edu.ph";
+$mail->From = "zanreno06@gmail.com";
 $mail->FromName = "AsuncionAdmin";
 
 $mail->addAddress($mailTo, "Zan");
+$mail->SMTPOptions=array('ssl'=>array(
+    'verify_peer'=>false,
+    'verify_peer_name'=>false,
+    'allow_self_signed'=>false
+));
 
 $mail->isHTML(true);
 
@@ -290,24 +315,29 @@ $mail = new PHPMailer(true);
 
 $mail->isSMTP();
 
-$mail->Host = "mail.smtp2go.com";
+$mail->Host = "smtp.gmail.com";
 $mail->SMTPAuth = true;
 
-$mail->Username = "janjan123";
-$mail->Password = "wagubusin123";
+$mail->Username = "zanreno06@gmail.com";
+$mail->Password = "ecaabcwxcnzojaxt";
 
 $mail->SMTPSecure = "tls";
 
-$mail->Port = "2525";
+$mail->Port = "587";
 
-$mail->From = "jan-jan.riparip.student@access.edu.ph";
+$mail->From = "zanreno06@gmail.com";
 $mail->FromName = "AsuncionAdmin";
 
 $mail->addAddress($mailTo, "Zan");
+$mail->SMTPOptions=array('ssl'=>array(
+    'verify_peer'=>false,
+    'verify_peer_name'=>false,
+    'allow_self_signed'=>false
+));
 
 $mail->isHTML(true);
 
-$mail->Subject = "Test Email Notification";
+$mail->Subject = "Email Verification";
 $mail->Body = $body;
 $mail->AltBody = "This is the Plain text version of the email content";
 

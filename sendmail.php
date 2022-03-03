@@ -65,14 +65,14 @@ function sendmail_getmail($email, $id, $appid, $idd, $sched, $startt, $endd){
     // <br/><br/>";
     $sched = date("M d, Y");
     $body = "<h2>You have booked an Appointment with the following Details:</h2>
-    <p>Appointment ID:</p> #$appid 
-    <p>Booking ID:</p> #$id 
-    <p>Your User ID: </p> #$idd 
-    <p>Date of your Appointment:</p> $sched 
-    <p>Start Time:</p> $startt 
-    <p>End Time:</p> $endd 
+    <p>Appointment ID: <strong> #$appid </strong> </p>
+    <p>Booking ID: <strong> #$id </strong> </p>
+    <p>Your User ID: <strong> #$idd </strong></p>
+    <p>Date of your Appointment: <strong> $sched </strong> </p>
+    <p>Start Time:<strong> $startt </strong> </p>
+    <p>End Time: <strong> $endd </strong> </p>
     <br/>
-    <p> Best Wishes,<p>
+    <p>Best Wishes,<p>
     <p><strong> Asuncion Optical </strong><p>
     ";
     

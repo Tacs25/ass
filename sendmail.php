@@ -65,18 +65,18 @@ function sendmail_getmail($email, $id, $appid, $idd, $sched, $startt, $endd){
     // <br/><br/>";
     
 
-    date('M d, Y', strtotime($sched));
-    date('h:i A', strtotime($startt));
-    date('h:i A', strtotime($endd));
+    $sched1 = date('M d, Y', strtotime($sched));
+    $startt1  = date('h:i A', strtotime($startt));
+    $endd1  = date('h:i A', strtotime($endd));
     // $startt = date('h:i A');
     // $endd  = date('h:i A');
     $body = "<h2>YOU HAVE BOOKED AN APPOINTMENT WITH THE FOLLOWING DETAILS:</h2>
     <p>Appointment ID: <strong> #$appid </strong> </p>
     <p>Booking ID: <strong> #$id </strong> </p>
     <p>Your User ID: <strong> #$idd </strong></p>
-    <p>Date of your Appointment: <strong> $sched </strong> </p>
-    <p>Start Time:<strong> $startt </strong> </p>
-    <p>End Time: <strong> $endd </strong> </p>
+    <p>Date of your Appointment: <strong> $sched1 </strong> </p>
+    <p>Start Time:<strong> $startt1 </strong> </p>
+    <p>End Time: <strong> $endd1 </strong> </p>
     <br/>
     <p>Best Wishes,<p>
     <p><strong> Asuncion Optical </strong><p>

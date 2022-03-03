@@ -66,8 +66,8 @@ function sendmail_getmail($email, $id, $appid, $idd, $sched, $startt, $endd){
     date_default_timezone_set('Asia/Manila');
     
     $sched = date("M d, Y");
-    $startt = date('h:i A');
-    $endd  = date('h:i A');
+    $startt = date('H:i A');
+    $endd  = date('H:i A');
     $body = "<h2>YOU HAVE BOOKED AN APPOINTMENT WITH THE FOLLOWING DETAILS:</h2>
     <p>Appointment ID: <strong> #$appid </strong> </p>
     <p>Booking ID: <strong> #$id </strong> </p>

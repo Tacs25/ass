@@ -129,8 +129,10 @@ function sendmail_getmail($email, $id, $appid, $idd, $sched, $startt, $endd){
 
 function sendmail_usercanc($id, $idd,$sched){
     $mailTo = "asuncion.optical.clinic@gmail.com";
+
+    $sched1 = date('M d, Y', strtotime($sched));
     $body = "<h2>The User with a User ID of #$idd </h2>
-    <h5>Has canceled an appointment booking at this date $sched</h5>
+    <h5>Has canceled an appointment booking at this date $sched1 </h5>
     <h5>With a booking Id of #$id</h5>
     <br/><br/>";
     
@@ -178,8 +180,10 @@ function sendmail_usercanc($id, $idd,$sched){
 
 function sendmail_book($id, $idd,$sched){
     $mailTo = "asuncion.optical.clinic@gmail.com";
+
+    $sched1 = date('M d, Y', strtotime($sched));
     $body = "<h2>The User with a User ID of #$idd </h2>
-    <h5>Has booked an appointment at this date $sched</h5>
+    <h5>Has booked an appointment at this date $sched1</h5>
     <h5>With an appointment Id of #$id</h5>
     <br/><br/>";
     
@@ -227,8 +231,9 @@ function sendmail_book($id, $idd,$sched){
 
 function sendmail_cancel($email, $sched){
 $mailTo = $email;
+$sched1 = date('M d, Y', strtotime($sched));
 $body = "<h2>UNFORTUNATELY THE DOCTOR IS NOT AVAILABLE</h2>
-<h5>Your appointment at this date $sched has been canceled.</h5>
+<h5>Your appointment at this date $sched1 has been canceled.</h5>
 <br/><br/>";
 
 $mail = new PHPMailer(true);

@@ -63,8 +63,12 @@ function sendmail_getmail($email, $id, $appid, $idd, $sched, $startt, $endd){
     // <h5>Start Time: $startt</h5>
     // <h5>End Time: $endd</h5>
     // <br/><br/>";
+    date_default_timezone_set('Asia/Manila');
+    
     $sched = date("M d, Y");
-    $body = "<h2>You have booked an Appointment with the following Details:</h2>
+    $startt = date('H:i A');
+    $endd  = date('H:i A');
+    $body = "<h2>YOU HAVE BOOKED AN APPOINTMENT WITH THE FOLLOWING DETAILS:</h2>
     <p>Appointment ID: <strong> #$appid </strong> </p>
     <p>Booking ID: <strong> #$id </strong> </p>
     <p>Your User ID: <strong> #$idd </strong></p>
@@ -221,8 +225,8 @@ function sendmail_book($id, $idd,$sched){
 
 function sendmail_cancel($email, $sched){
 $mailTo = $email;
-$body = "<h2>Unfortunately The Doctor is not Available</h2>
-<h5>Your appointment at this date $sched has been canceled</h5>
+$body = "<h2>UNFORTUNATELY THE DOCTOR IS NOT AVAILABLE</h2>
+<h5>Your appointment at this date $sched has been canceled.</h5>
 <br/><br/>";
 
 $mail = new PHPMailer(true);
@@ -318,8 +322,8 @@ else {
 
 function sendmail_verify($email, $vkey){
 $mailTo = $email;
-$body = "<h2>You have registered in Asuncion Optical Webpage</h2>
-<h5>Verify your email to log in with the given link below</h5>
+$body = "<h2>YOU HAVE REGISTERED IN ASUNCION OPTICAL</h2>
+<h5>Verify your email to log in with the given link below.</h5>
 <br/><br/>
 <a href='https://asuncion-clinic.herokuapp.com/main/includes/verify.php?vkey=$vkey'>Click Here</a></h1>";
 

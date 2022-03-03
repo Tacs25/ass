@@ -63,8 +63,6 @@ function sendmail_getmail($email, $id, $appid, $idd, $sched, $startt, $endd){
     // <h5>Start Time: $startt</h5>
     // <h5>End Time: $endd</h5>
     // <br/><br/>";
-    date_default_timezone_set('Asia/Manila');
-    
     $sched = date("M d, Y");
     $startt = date('h:i A');
     $endd  = date('h:i A');

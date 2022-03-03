@@ -63,9 +63,9 @@ function sendmail_getmail($email, $id, $appid, $idd, $sched, $startt, $endd){
     // <h5>Start Time: $startt</h5>
     // <h5>End Time: $endd</h5>
     // <br/><br/>";
-    $sched = date("M d, Y");
-    $startt = date('h:i A');
-    $endd  = date('h:i A');
+    $schedule = date('M d, Y', strtotime($sched));
+    // $startt = date('h:i A');
+    // $endd  = date('h:i A');
     $body = "<h2>YOU HAVE BOOKED AN APPOINTMENT WITH THE FOLLOWING DETAILS:</h2>
     <p>Appointment ID: <strong> #$appid </strong> </p>
     <p>Booking ID: <strong> #$id </strong> </p>

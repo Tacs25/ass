@@ -55,14 +55,29 @@ use PHPMailer\PHPMailer\SMTP;
 
 function sendmail_getmail($email, $id, $appid, $idd, $sched, $startt, $endd){
     $mailTo = $email;
-    $body = "<h2>You have booked an Appointment with the following Details</h2>
-    <h5>Appointment ID: #$appid</h5>
-    <h5>Booking ID: #$id</h5>
-    <h5>Your User ID: #$idd</h5>
-    <h5>Date of your Appointment: $sched</h5>
-    <h5>Start Time: $startt</h5>
-    <h5>End Time: $endd</h5>
-    <br/><br/>";
+    // $body = "<h2>You have booked an Appointment with the following Details:</h2>
+    // <h5>Appointment ID: #$appid</h5>
+    // <h5>Booking ID: #$id</h5>
+    // <h5>Your User ID: #$idd</h5>
+    // <h5>Date of your Appointment: $sched</h5>
+    // <h5>Start Time: $startt</h5>
+    // <h5>End Time: $endd</h5>
+    // <br/><br/>";
+    $sched = date("M d, Y");
+    $body = "<h2>You have booked an Appointment with the following Details:</h2>
+    <p>Appointment ID:</p> <strong> #$appid </strong>
+    <p>Booking ID:</p> <strong> #$id </strong>
+    <p>Your User ID:</p> <strong> #$idd </strong>
+    <p>Date of your Appointment:</p> <strong>$sched </strong>
+    <p>Start Time:</p> <strong>$startt </strong>
+    <p>End Time:</p><strong> $endd </strong>
+    <br/>
+    <p>Best Wishes, <p> <br>
+    <p><strong> Asuncion Optical </strong><p>
+    ";
+    
+
+
     
     $mail = new PHPMailer(true);
     //$mail = new PHPMailer\PHPMailer\PHPMailer;

@@ -79,7 +79,7 @@ function sendmail_getmail($email, $id, $appid, $idd, $sched, $startt, $endd){
     <p>End Time: <strong> $endd1 </strong> </p>
     <br/>
     <p>Best Wishes,<p>
-    <p><strong> Asuncion Optical </strong><p>
+    <p><strong><em>Asuncion Optical </em></strong><p>
     ";
     
 
@@ -233,7 +233,7 @@ function sendmail_cancel($email, $sched){
 $mailTo = $email;
 $sched1 = date('M d, Y', strtotime($sched));
 $body = "<h2>UNFORTUNATELY THE DOCTOR IS NOT AVAILABLE</h2>
-<h5>Your appointment at this date $sched1 has been canceled.</h5>
+<p>Your appointment at this date <strong>$sched1</strong> has been canceled.</p>
 <br/><br/>";
 
 $mail = new PHPMailer(true);
@@ -281,7 +281,7 @@ else {
 function sendmail_forgot($email){
 $mailTo = $email;
 $body = "<h2>Forgot Password Verification Link</h2>
-<h5>Verify your email to change your password with the given link below</h5>
+<h5><em>Verify your email to change your password with the given link below.</em></h5>
 <br/><br/>
 <a href='https://asuncion-clinic.herokuapp.com/changeforgot.php?error=$email'>Click Here</a></h1>";
 
@@ -330,7 +330,7 @@ else {
 function sendmail_verify($email, $vkey){
 $mailTo = $email;
 $body = "<h2>YOU HAVE REGISTERED IN ASUNCION OPTICAL</h2>
-<h5>Verify your email to log in with the given link below.</h5>
+<h5><em>Verify your email to log in with the given link below.</em></h5>
 <br/><br/>
 <a href='https://asuncion-clinic.herokuapp.com/main/includes/verify.php?vkey=$vkey'>Click Here</a></h1>";
 

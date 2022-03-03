@@ -70,7 +70,7 @@ function sendmail_getmail($email, $id, $appid, $idd, $sched, $startt, $endd){
     <p>Appointment ID: <strong> #$appid </strong> </p>
     <p>Booking ID: <strong> #$id </strong> </p>
     <p>Your User ID: <strong> #$idd </strong></p>
-    <p>Date of your Appointment: <strong> $sched </strong> </p>
+    <p>Date of your Appointment: <strong> $schedule </strong> </p>
     <p>Start Time:<strong> $startt </strong> </p>
     <p>End Time: <strong> $endd </strong> </p>
     <br/>

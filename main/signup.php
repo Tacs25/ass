@@ -70,7 +70,7 @@
 						</div>
 						<div class="form-group">
 							<label>Patient Contact No.<span class="text-danger"></label>
-							<input type="tel"  name="patient_phone_no" id="patient_phone_no" class="form-control" placeholder="0912-3456-321" pattern="[0-9]{4}-[0-9]{4}-[0-9]{3}"required   />
+							<input type="tel"  name="patient_phone_no" id="patient_phone_no" class="form-control" placeholder="09123456321" pattern="[0-9]{11}"required   />
 						</div>
 						<div class="form-group">
 							<label>Patient Complete Address<span class="text-danger"></label>

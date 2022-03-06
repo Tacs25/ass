@@ -122,8 +122,8 @@ include_once 'main/includes/dbh.inc.php'
                 <div class="col-md-12">
                   <h3 class="fw-bold text-uppercase p-4">Schedule management</h3>
                   <?php 
-                  if (isset($_GET["error"])){
-                    if ($_GET["error"] === "add"){
+                  if (isset($_GET["success"])){
+                    if ($_GET["success"] === "add"){
                       ?>
                       <div class="alert alert-success" role="alert">
                         Added Schedule.

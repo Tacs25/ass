@@ -162,7 +162,7 @@ session_start();
 			if ($_GET["error"] === "success"){
 			?>
 			<script>
-			swal("Edit", "Successfully Changed", "success");
+			swal("Edit Information", "Successfully Changed", "success");
 			</script>
   			<?php
   			}

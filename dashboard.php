@@ -18,7 +18,7 @@
   </head>
   <body>
     <!-- top navigation bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="box-shadow: 0 3px 10px rgba(0, 0, 0, .3);">
       <div class="container-fluid">
         <button
           class="navbar-toggler"
@@ -126,7 +126,7 @@
               $rows = $resultt->fetch_assoc();
         ?>
 
-        <div class="row">
+        <!-- <div class="row">
           <div class="col-md-6 pt-3">
             <div class="card text-dark bg-light">
               <div class="card-header fw-bold">TOTAL OF ACCOUNT</div>
@@ -135,8 +135,22 @@
     
               </div>
             </div>
-          </div>
+          </div> -->
+          <div class="row">
           <div class="col-md-6 pt-3">
+            <div class="card bg-primary text-white h-100">
+              <div class="card-body py-4">
+                <h2><?php echo $row['count'];?></h2>
+              </div>
+              <div class="card-footer d-flex">
+               TOTAL OF ACCOUNTS
+                <span class="ms-auto">
+                  
+                </span>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="col-md-6 pt-3">
             <div class="card text-dark bg-light">
               <div class="card-header fw-bold">TOTAL OF APPOINTMENT</div>
               <div class="card-body">
@@ -145,7 +159,21 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
+        
+          <div class="col-md-6 pt-3">
+            <div class="card bg-success text-white h-100">
+              <div class="card-body py-4">
+                <h2><?php echo $row['count'];?></h2>
+              </div>
+              <div class="card-footer d-flex">
+               TOTAL OF APPOINTMENT
+                <span class="ms-auto">
+                  
+                </span>
+              </div>
+            </div>
+          </div>
       
         
     </main>

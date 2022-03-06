@@ -1,7 +1,7 @@
 <?php
     include_once 'header.php';
 ?>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
 <div id="signup">
 <div id ="main" >
 <div class="container mt-5 ">
@@ -9,9 +9,38 @@
 		<div class="col col-md-4">
 			
 			<span id="message"></span>
-			<div class="card">
-				<div class="card-header"><strong>Login</strong></div>
+			<div class="card" style="box-shadow: 0 3px 10px rgb(0 0 0 / 0.3);">
+				<div class="card-header"><center><h5>Login</h5></center></div>
 				<div class="card-body">
+				<?php
+						if (isset($_GET["error"])){
+							
+								if ($_GET["error"] === "wronglogin"){
+									?>
+									<div class="alert alert-danger" role="alert">
+										Incorrect Login Info.
+									</div>
+									
+								<?php
+								}
+								else if ($_GET["error"] === "wrongpassword"){
+									?>
+									<div class="alert alert-danger" role="alert">
+										Wrong Password.
+									</div>
+									
+								<?php
+								}
+								else if ($_GET["error"] === "youneedtoverify"){
+									?>
+									<div class="alert alert-danger" role="alert">
+										You need to verify your email.
+									</div>
+									
+								<?php
+								}
+							}
+							?>
 					<form method="post" id="patient_login_form" action="includes/login.inc.php">
 						<div class="form-group">
 							<label>Email Address</label>
@@ -55,32 +84,7 @@
 						<div class="form-group text-center">
 							<p><a href="../forgotpass.php">Forgot Password?</a></p>
 						</div>
-						<?php
-						if (isset($_GET["error"])){
-							
-								if ($_GET["error"] === "wronglogin"){
-									?>
-									<script>
-									swal("Something went wrong", "Incorrect Login Info", "error");
-									</script>
-								<?php
-								}
-								else if ($_GET["error"] === "wrongpassword"){
-									?>
-									<script>
-									swal("Something went wrong", "Wrong Password", "error");
-									</script>
-								<?php
-								}
-								else if ($_GET["error"] === "youneedtoverify"){
-									?>
-									<script>
-									swal("You need to verify your email", "", "warning");
-									</script>
-								<?php
-								}
-							}
-							?>
+						
 					</form>
 				</div>
 			</div>

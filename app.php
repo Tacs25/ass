@@ -14,7 +14,7 @@
   </head>
   <body>
     <!-- top navigation bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="box-shadow: 0 3px 10px rgba(0, 0, 0, .3);">
       <div class="container-fluid">
         <button
           class="navbar-toggler"

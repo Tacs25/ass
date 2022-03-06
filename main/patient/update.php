@@ -4,16 +4,34 @@ require_once '../includes/functions.inc.php';
 require_once '../includes/dbh.inc.php';
 session_start();
 ?>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
 <div id="edit">
 <div id ="main" >
 <div class="container mt-4 " id="content">
 	<div class="row content d-flex justify-content-center">
 		<div class="col col-md-6">
 			<span id="message"></span>
-			<div class="card">
-				<div class="card-header">Register</div>
+			<div class="card" style="box-shadow: 0 3px 10px rgb(0 0 0 / 0.3);">
+				<div class="card-header"><center><h5>Change Password</h5></center></div>
 				<div class="card-body">
+				<?php 
+				if (isset($_GET["error"])){
+					if ($_GET["error"] === "passnotmatch"){
+            			?>
+						<div class="alert alert-danger" role="alert">
+							Password didn't match.
+						</div>
+          				<?php
+          			}
+					else if ($_GET["error"] === "wrongpassword1"){
+            			?>
+            			<div class="alert alert-danger" role="alert">
+							Wrong Password.
+						</div>
+          				<?php
+          			}
+      			}
+			?>
 					<form method="post" id="patient_register_form" action="../includes/update.inc.php">
 						<div class="form-group">
 							
@@ -82,24 +100,7 @@ session_start();
 </div> 
 </div>
 </div>  
-			<?php 
-				if (isset($_GET["error"])){
-					if ($_GET["error"] === "passnotmatch"){
-            			?>
-            			<script>
-            			swal("Something Went Wrong", "Password didn't match", "error");
-            			</script>
-          				<?php
-          			}
-					else if ($_GET["error"] === "wrongpassword1"){
-            			?>
-            			<script>
-            			swal("Something Went Wrong", "Wrong Password", "error");
-            			</script>
-          				<?php
-          			}
-      			}
-			?>
+			
 
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>

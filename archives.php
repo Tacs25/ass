@@ -20,7 +20,7 @@ include_once 'main/includes/dbh.inc.php';
   </head>
   <body>
     <!-- top navigation bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="box-shadow: 0 3px 10px rgba(0, 0, 0, .3);">
       <div class="container-fluid">
         <button
           class="navbar-toggler"
@@ -132,8 +132,8 @@ include_once 'main/includes/dbh.inc.php';
                           <thead>
                           <tr>
                             <th>Archive No.</th>
-                            <th>Appointment ID</th>
-                            <th>Booking ID</th>
+                            
+                            
                             <th>User ID</th>
                             <th>Date</th>
                             <th>Start Time</th>
@@ -150,8 +150,6 @@ include_once 'main/includes/dbh.inc.php';
                           ?>
                             <tr>
                               <td><input type="hidden" name="id" value="<?php echo $row['ID'];?>"><?php echo $row['ID'];?></td>
-                              <td><input type="hidden" name="appid" value="<?php echo $row['Appointment_ID'];?>"><?php echo $row['Appointment_ID'];?></td>
-                              <td><input type="hidden" name="bookid" value="<?php echo $row['Booking_ID'];?>"><?php echo $row['Booking_ID'];?></td>
                               <td><input type="hidden" name="User_ID" value="<?php echo $row['User_ID'];?>"><?php echo $row['User_ID'];?></td>
                               <td><input type="hidden" name="sched" value="<?php echo $row['sched'];?>"><?php echo $row['sched'];?></td>
                               <td><input type="hidden" name="startt" value="<?php echo $row['start_time'];?>">
@@ -170,8 +168,6 @@ include_once 'main/includes/dbh.inc.php';
                           <tfoot>
                           <tr>
                             <th>Archive No.</th>
-                            <th>Appointment ID</th>
-                            <th>Booking ID</th>
                             <th>User ID</th>
                             <th>Date</th>
                             <th>Start Time</th>

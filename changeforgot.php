@@ -13,12 +13,23 @@ if(isset($_GET['error'])){
 	<div class="row content d-flex justify-content-center">
 		<div class="col col-md-6">
 			<span id="message"></span>
-			<div class="card">
-				<div class="card-header">Register</div>
+			<div class="card" style="box-shadow: 0 3px 10px rgb(0 0 0 / 0.3);">
+				<div class="card-header"> <center><h5>Change Password</h5></center></div>
 				<div class="card-body">
+				<?php 
+							if (isset($_GET["error"])){
+								if($_GET["error"] === "passworddontmatch"){
+									?>
+									<div class="alert alert-danger" role="alert">
+										Password didn't match.
+									</div>
+								<?php
+								}
+							}
+							?>
 					<form method="post" id="patient_register_form" action="change.process.php">
 						<div class="row">
-							<div class="col-md-6">
+							<div class="">
 								<div class="form-group">
 
 									<label>New Password<span class="text-danger"></label>
@@ -34,7 +45,7 @@ if(isset($_GET['error'])){
 							</div>
 								</div>
 							</div>
-							<div class="col-md-6">
+							<div class="">
 								<div class="form-group">
 
 									<label>Confirm Password<span class="text-danger"></label>
@@ -60,17 +71,7 @@ if(isset($_GET['error'])){
 							<p><a href="main/login.php">Cancel</a></p>
 						</div>
 
-						<?php 
-							if (isset($_GET["error"])){
-								if($_GET["error"] === "passworddontmatch"){
-									?>
-									<script>
-									swal("Something went wrong", "Password don't match", "error");
-									</script>
-								<?php
-								}
-							}
-							?>
+						
 					</form>
 				</div>
 			</div>

@@ -7,9 +7,20 @@
 <div class="container-fluid">
 	<?php $page = 'appointment'; include('navbar.php'); ?>
 
-    <br />
+	<br>
 
-	<div class="card">
+	<?php 
+							if (isset($_GET["error"])){
+								if ($_GET["error"] === "canceled"){
+									?>
+									<div class="alert alert-danger" role="alert">
+										Canceled Appointment.
+									</div>
+								<?php
+								}
+							}
+							?>
+
 		<span id="message"></span>
 		<div class="card-header"><h4>My Appointment List</h4></div>
 			<div class="card-body">
@@ -64,7 +75,7 @@
 								</div>
 								<div class="modal-footer">
 									<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-									<input type="submit" name ="cancel" class="btn btn-primary" value ="Confirm"/>
+									<input type="submit" name ="cancel" class="btn btn-danger" value ="Confirm"/>
 								</div>
 						
 							</div>
@@ -82,7 +93,7 @@
 							if($_GET["error"] === "none"){
 								?>
 									<script>
-									swal("Nice", "Booked Successfully", "success");
+									swal("Booked Successfully", "", "success");
 									</script>
 					  			<?php
 							}

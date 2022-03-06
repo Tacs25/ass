@@ -30,7 +30,7 @@
 <body>
     <!-- nav bar -->
     <section id="navigation">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top" style="box-shadow: 0 3px 10px rgba(0, 0, 0, .3);">
             <div class="container">
                 <a class="navbar-brand" href="index.php"><img src="img/eyel.png" alt="logo" height="50"><span style="color: blue; font-weight: bolder;">A</span>suncion <span style="color: blue; font-weight: bolder;">O</span>ptical</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -204,49 +204,14 @@
         </div>
 
 
-        <!-- testimonials -->
-        <section id="" class="container mt-1 mb-5" data-aos="zoom-in">
-            <div class="post-heading text-center">
-                <h3 class="display-4 font-weight-bold">Testimonials</h3>
-                <hr class="w-50 mx-auto pb-1">
-            </div>
-
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-12 mt-3 pb-2" data-aos="zoom-in">
-                    <div class="card">
-                        <div class="card-body">
-                            <p class="card-text" style="text-align: center;"><em>"First time ko magpa check-up and sakto na sa Asuncion Optical ako nagpa check up. sobrang ganda ng Service nila, and very Approchable ng doctor."</em></p>
-                            <h5 class="card-title" style="text-align: center;">- Jan Jan -</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-12 mt-3 pb-2" data-aos="zoom-in">
-                    <div class="card">
-                        <div class="card-body">
-                            <p class="card-text" style="text-align: center;"><em>"Napakabait ng mga doctor, and malinis ang clinic. Sasabihin nila kung ano yung mga dapat iwasan para ma correct yung eyesight mo."</em></p>
-                            <h5 class="card-title" style="text-align: center;">- Eugene -</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-12 mt-3 pb-2" data-aos="zoom-in">
-                    <div class="card">
-                        <div class="card-body">
-                            <p class="card-text" style="text-align: center;"><em>"Yung Assistant ni doctor is very Approachable and Maalaga sa mga patient. and si doctor naman sobrang bait, maganda din mga frames."</em></p>
-                            <h5 class="card-title" style="text-align: center;">- Angel -</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!--map-->
         <section id="map" class="pl-4 pr-4" data-aos="zoom-in">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3863.597465277945!2d120.92281264876112!3d14.450346589848722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397d29c2e9d1adf%3A0x2c342a9330e00f5!2sAsuncion%20Optical!5e0!3m2!1sen!2sph!4v1631771831096!5m2!1sen!2sph"
                 width="100%" height="400" style="border: 2px; " allowfullscreen="" loading="lazy"></iframe>
         </section>
 
+        
         <!--footer-->
-
         <section id="contact" class="mt-2">
             <footer class="text-center text-lg-start bg-light text-muted">
                 <!-- Section: Social media -->
@@ -296,36 +261,18 @@
                             <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4" data-aos="zoom-in">
                                 <!-- Links -->
                                 <h6 class="text-uppercase fw-bold mb-4">
-                                    Branches
+                                    Branch
                                 </h6>
-                                <p><i class="fas fa-home me-3"></i> Waltermart, Lotus Mall, Imus City, Cavite</p>
-                                <p><i class="fas fa-home me-3"></i> Waltermart, Carmona Cavite</p>
-                                <p><i class="fas fa-home me-3"></i> Trece Marites City, Cavite</p>
-                                <p><i class="fas fa-home me-3"></i> Zapote (Centre, Bacoor) Cavite</p>
+                               
                                 <p><i class="fas fa-home me-3"></i> 54 Balsahan Binakayan, Kawit Cavite</p>
-                                <p><i class="fas fa-home me-3"></i> The District, Ayala Mall, Dasmariñas Cavite</p>
+                                
 
                             </div>
 
                             <!-- Grid column -->
 
                             <!-- Grid column -->
-                            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4" data-aos="zoom-in">
-                                <!-- Links -->
-                                <h6 class="text-uppercase fw-bold mb-4">
-                                    Open hours
-                                </h6>
-                                <p>
-                                    <p><i class="fas fa-calendar me-3"></i> DAILY 9:00 AM - 8:00 PM </p>
-                                    <p><i class="fas fa-calendar me-3"></i> DAILY 9:00 AM - 9:00 PM </p>
-                                    <p><i class="fas fa-calendar me-3"></i> DAILY 9:00 AM - 6:30 PM </p>
-                                    <p><i class="fas fa-calendar me-3"></i> DAILY 10:00 AM - 7:00 PM </p>
-                                    <p><i class="fas fa-calendar me-3"></i> DAILY 10:00 AM - 9:00 PM </p>
-                                    <p><i class="fas fa-calendar me-3"></i> DAILY 10:00 AM - 9:00 PM </p>
-
-                                </p>
-
-                            </div>
+                            
                             <!-- Grid column -->
 
                             <!-- Grid column -->
@@ -335,13 +282,8 @@
                                     Contact
                                 </h6>
 
-
-                                <p><i class="fas fa-phone me-3"></i> (046) 683-8694 </p>
-                                <p><i class="fas fa-phone me-3"></i> (046) 482-0239 </p>
-                                <p><i class="fas fa-phone me-3"></i> (046) 864-0049 </p>
-                                <p><i class="fas fa-phone me-3"></i> (046) 417-1423 </p>
                                 <p><i class="fas fa-phone me-3"></i> (046) 852-5194 </p>
-                                <p><i class="fas fa-phone me-3"></i> (046) 683-8696 </p>
+                                
                             </div>
 
                             <!-- Grid column -->

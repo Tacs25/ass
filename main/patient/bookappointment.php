@@ -55,11 +55,11 @@
 										<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 									</div>
 								<div class="modal-body">
-									<p>Just click <strong>'book' </strong>below if you want to book.</p>
+									<p>Just click <strong>'Yes' </strong>below if you want to book.</p>
 								</div>
 								<div class="modal-footer">
 									<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-									<input type="submit" name ="booking" class="btn btn-primary" value ="Book"/>
+									<input type="submit" name ="booking" class="btn btn-success" value ="Yes"/>
 								</div>
 						
 							</div>

@@ -14,7 +14,7 @@ if(isset($_POST['cancel'])){
 
     $sq = "UPDATE booked SET status = 'canceled' WHERE ID = '$id';";
     $result = mysqli_query($conn, $sq) or die(mysqli_error($conn));
-     header("location: ../patient/bookappointment.php?error=canceled");
+     header("location: ../patient/myappointment.php?error=canceled");
       exit(); 
     // sendmail_usercanc($id, $idd, $sched);
        
@@ -27,12 +27,15 @@ if(isset($_POST['getmail'])){
     $sched = $_POST['sched'];
     $startt = $_POST['startt'];
     $endd = $_POST['endd'];
+   
+    
 
     $resultt = $conn->query("SELECT * FROM data WHERE ID = $idd");
 	$row = $resultt->fetch_assoc();
     $email = $row['Email'];
+    
 
-    sendmail_getmail($email, $id, $appid, $idd, $sched, $startt, $endd);
+    sendmail_getmail($email, $id, $appid, $idd, $sched, $startt, $endd, $First_Name);
 }
 else{
     header("location: ../../index.php");

@@ -27,7 +27,7 @@
   </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="box-shadow: 0 3px 10px rgba(0, 0, 0, .3);">
         <div class="container">
           <a class="navbar-brand" href="../../index.php" ><img src="../../img/eyel.png" alt="logo" height="50"><span style="color: blue; font-weight: bolder;" >A</span>suncion <span style="color: blue; font-weight: bolder;">O</span>ptical</a>
             <ul class="navbar-nav ms-auto">

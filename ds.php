@@ -23,7 +23,7 @@ include_once 'main/includes/dbh.inc.php'
   </head>
   <body>
     <!-- top navigation bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="box-shadow: 0 3px 10px rgba(0, 0, 0, .3);">
       <div class="container-fluid">
         <button
           class="navbar-toggler"
@@ -121,10 +121,23 @@ include_once 'main/includes/dbh.inc.php'
             <div class="row ">
                 <div class="col-md-12">
                   <h3 class="fw-bold text-uppercase p-4">Schedule management</h3>
+                  <?php 
+                  if (isset($_GET["error"])){
+                    if ($_GET["error"] === "add"){
+                      ?>
+                      <div class="alert alert-success" role="alert">
+                        Added Schedule.
+                      </div>
+                    <?php
+                    }
+                  }
+                  ?>
                 </div>
             </div>
             <div class="col-md-12 mb-3 pt-3">
                 <div class="card">
+                
+                  
                   <div class="card-header">
                       <div class="row">
                           <div class="col">

@@ -11,7 +11,7 @@ if(isset($_POST['booking'])){
     $result = mysqli_query($conn, $sql) or die(mysqli_error($conn));
     if($result){
         echo'<script> alert ("Data Saved"); </script>';
-        header("Location: ../../ds.php");
+        header("Location: ../../ds.php?error=add");
     }
     else{
         echo'<script> alert ("Data not Saved"); </script>';

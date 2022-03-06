@@ -115,7 +115,7 @@ function createuser($conn, $email, $Password, $First_Name, $Last_Name, $Gender, 
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
     if($sql){
-        sendmail_verify("$email", "$vkey");
+        sendmail_verify("$email", "$vkey", "$First_Name");
 
     }
 }

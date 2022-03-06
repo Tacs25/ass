@@ -9,8 +9,8 @@
 		<div class="col col-md-4">
 			
 			<span id="message"></span>
-			<div class="card">
-				<div class="card-header"><strong>Login</strong></div>
+			<div class="card" style="box-shadow: 0 3px 10px rgb(0 0 0 / 0.3);">
+				<div class="card-header"><center><h5>Login</h5></center></div>
 				<div class="card-body">
 					<form method="post" id="admin_login_form" action="includes/logina.inc.php">
 						<div class="form-group">

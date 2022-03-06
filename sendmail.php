@@ -53,7 +53,7 @@ use PHPMailer\PHPMailer\SMTP;
 //}
 
 
-function sendmail_getmail($email, $id, $appid, $idd, $sched, $startt, $endd){
+function sendmail_getmail($email, $id, $appid, $idd, $sched, $startt, $endd, $First_Name){
     $mailTo = $email;
     // $body = "<h2>You have booked an Appointment with the following Details:</h2>
     // <h5>Appointment ID: #$appid</h5>
@@ -70,16 +70,17 @@ function sendmail_getmail($email, $id, $appid, $idd, $sched, $startt, $endd){
     $endd1  = date('h:i A', strtotime($endd));
     // $startt = date('h:i A');
     // $endd  = date('h:i A');
-    $body = "<h2>YOU HAVE BOOKED AN APPOINTMENT WITH THE FOLLOWING DETAILS:</h2>
-    <p>Appointment ID: <strong> #$appid </strong> </p>
-    <p>Booking ID: <strong> #$id </strong> </p>
-    <p>Your User ID: <strong> #$idd </strong></p>
-    <p>Date of your Appointment: <strong> $sched1 </strong> </p>
-    <p>Start Time:<strong> $startt1 </strong> </p>
-    <p>End Time: <strong> $endd1 </strong> </p>
-    <br/>
-    <p>Best Wishes,<p>
-    <p><strong><em>Asuncion Optical </em></strong><p>
+    $body = "<h2>Book Information</h2>
+    <p>Hi <strong>$First_Name,</strong></p> 
+    <p>This is a friendly reminder that we have an appointment scheduled <br>
+    for you on <strong>$sched1</strong> at <strong>$startt1</strong> to <strong>$endd1</strong>.</p>
+    <p>Please bring <strong> Vaccination Card</strong> with you. <br>
+    Try to arrive 15 minutes early. <br>
+    See you soon!
+    </p> 
+    <p>Regards, <br>
+    <strong><em>Asuncion Optical </em></strong>
+    </p>
     ";
     
 
@@ -103,7 +104,7 @@ function sendmail_getmail($email, $id, $appid, $idd, $sched, $startt, $endd){
     $mail->Port = "587";
     
     $mail->From = "zanreno06@gmail.com";
-    $mail->FromName = "AsuncionAdmin";
+    $mail->FromName = "AsuncionOptical";
     
     $mail->addAddress($mailTo, "Zan");
     $mail->SMTPOptions=array('ssl'=>array(
@@ -254,7 +255,7 @@ $mail->SMTPSecure = "tls";
 $mail->Port = "587";
 
 $mail->From = "zanreno06@gmail.com";
-$mail->FromName = "AsuncionAdmin";
+$mail->FromName = "AsuncionOptical";
 
 $mail->addAddress($mailTo, "Zan");
 $mail->SMTPOptions=array('ssl'=>array(
@@ -283,7 +284,7 @@ $mailTo = $email;
 $body = "<h2>Forgot Password Verification Link</h2>
 <h5><em>Verify your email to change your password with the given link below.</em></h5>
 <br/><br/>
-<a href='https://asuncion-clinic.herokuapp.com/changeforgot.php?error=$email'>Click Here</a></h1>";
+<a href='http://localhost/ass/changeforgot.php?error=$email'>Click Here</a></h1>";
 
 $mail = new PHPMailer(true);
 //$mail = new PHPMailer\PHPMailer\PHPMailer;
@@ -303,7 +304,7 @@ $mail->SMTPSecure = "tls";
 $mail->Port = "587";
 
 $mail->From = "zanreno06@gmail.com";
-$mail->FromName = "AsuncionAdmin";
+$mail->FromName = "AsuncionOptical";
 
 $mail->addAddress($mailTo, "Zan");
 $mail->SMTPOptions=array('ssl'=>array(
@@ -327,12 +328,21 @@ else {
 }
 }
 
-function sendmail_verify($email, $vkey){
+function sendmail_verify($email, $vkey, $First_Name){
 $mailTo = $email;
-$body = "<h2>YOU HAVE REGISTERED IN ASUNCION OPTICAL</h2>
-<h5><em>Verify your email to log in with the given link below.</em></h5>
-<br/><br/>
-<a href='https://asuncion-clinic.herokuapp.com/main/includes/verify.php?vkey=$vkey'>Click Here</a></h1>";
+$body = "<h2>Register Confirmation</h2>
+<p>Dear <strong>$First_Name,</strong></p> 
+<p>Thank you for completing your registration with <strong>Asuncion Optical</strong>.</p>
+<p>This email serves as a confirmation that your account is activated  <br>
+that you are officially a part of the <strong>Asuncion Optical</strong> family. <br>
+Enjoy!
+</p>
+<p> <em>Click the link below to get fully verified </em> </p>
+<a href='http://localhost/ass/main/includes/verify.php?vkey=$vkey'>Click Here </a>
+<p>Regards, <br>
+<strong><em>Asuncion Optical </em></strong>
+</p>";
+
 
 $mail = new PHPMailer(true);
 //$mail = new PHPMailer\PHPMailer\PHPMailer;
@@ -352,7 +362,7 @@ $mail->SMTPSecure = "tls";
 $mail->Port = "587";
 
 $mail->From = "zanreno06@gmail.com";
-$mail->FromName = "AsuncionAdmin";
+$mail->FromName = "AsuncionOptical";
 
 $mail->addAddress($mailTo, "Zan");
 $mail->SMTPOptions=array('ssl'=>array(
@@ -385,4 +395,5 @@ else {
         //<h5>Verify your email to log in with the below given link</h5>
         //<br/><br/>
         //<a href='http://localhost/clinic/main/includes/verify.php?vkey=$vkey'>Click Here </a>
+        // <a href='https://asuncion-clinic.herokuapp.com/main/includes/verify.php?vkey=$vkey'>Click Here</a></h1>";
     //";

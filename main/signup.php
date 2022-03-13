@@ -16,64 +16,29 @@
 				<div class="card-body">
 				<?php 
 							if (isset($_GET["error"])){
-								if ($_GET["error"] === "emptyinput"){
-									?>
-									<div class="alert alert-danger" role="alert">
-										Fill Empty Input.
-									</div>
-								<?php
-								}
 								
-								else if ($_GET["error"] === "invalidemail"){
-									?>
-									<div class="alert alert-danger" role="alert">
-										Invalid Email.
-									</div>
-								<?php
-								}
-								
-								else if($_GET["error"] === "passworddontmatch"){
-									?>
-									<div class="alert alert-danger" role="alert">
-										Password didn't match.
-									</div>
-									
-								<?php
-								}
-								
-								else if ($_GET["error"] === "somethingwentwrong"){
-									?>
-									<div class="alert alert-danger" role="alert">
-										Something went wrong.
-									</div>
-									
-								<?php
-								}
-								
-								else if ($_GET["error"] === "emailtaken"){
-									?>
-									<div class="alert alert-danger" role="alert">
-										Email Already Exist.
-										</div>
-								<?php
-								}
-								
+								?>
+								<div class="alert alert-danger" role="alert">
+									<?php echo $_GET['error']; ?>
+								</div>
+							<?php
 								
 							}
 							?>
+								
 					<form method="post" id="patient_register_form" action="../signup.inc.php">
 						<div class="row">
 								<div class="col-md-6">
 									<div class="form-group">
 										
 										<label>First Name<span class="text-danger"></label>
-										<input type="text" name="patient_first_name" id="patient_first_name" class="form-control" required   />
+										<input type="text" name="patient_first_name" id="patient_first_name" class="form-control"  value = "" required   />
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
 										<label>Last Name<span class="text-danger"></label>
-										<input type="text" name="patient_last_name" id="patient_last_name" class="form-control" required   />
+										<input type="text" name="patient_last_name" id="patient_last_name" class="form-control"  value ="" required   />
 									</div>
 								</div>
 							</div>
@@ -81,8 +46,8 @@
 						
 						<div class="form-group">
 							<label>Gender<span class="text-danger"></label>
-								<select name="patient_gender" id="patient_gender" class="form-control required">
-									<option><p>--Select Gender--</p></option>
+								<select name="patient_gender" id="patient_gender" class="form-select" required>
+									<option value"" disabled selected hidden>--Select Gender--</option>
 									<option value="Male">Male</option>
 									<option value="Female">Female</option>
 									<option value="Other">Other</option>

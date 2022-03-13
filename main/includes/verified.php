@@ -44,7 +44,8 @@
     </style>
 <body>
 
-<h2>Your Account has been verified you may now log in. <br>
+<h2> <b>Thank you!</b> <br>
+Your Account has been verified you may now log in. <br>
 <i class="bi bi-envelope-check-fill"
 style="font-size: 11rem; color: green; "></i> <br>
 

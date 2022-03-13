@@ -3,6 +3,7 @@ require_once 'main/includes/functions.inc.php';
 require_once 'main/includes/dbh.inc.php';
 require_once 'sendmail.php';
 
+$errors = array();
 //$mysqli = new mysqli('localhost', 'root', '', 'access') or die(mysqli_error($mysqli));
 
 if (isset($_POST['patient_register_button'])){
@@ -20,19 +21,19 @@ if (isset($_POST['patient_register_button'])){
     //$mysqli->query("INSERT INTO data (Email, Pass, First_Name, Last_Name, Gender, Contact, Home) VALUES('$Email', '$Password', '$First_Name', '$Last_Name', '$Gender', '$Contact_no', '$Address')") or die($mysqli->error);
 
 if (emptyInputSignup($email, $Password, $Passwordrp, $First_Name, $Last_Name, $Gender, $Contact_no, $Address) !== false){
-    header("location: main/signup.php?error=emptyinput");
+    header("location: main/signup.php?error=Fill Empty Input");
     exit();
 }
 if (invalidEmail($email) !== false){
-    header("location: main/signup.php?error=invalidemail");
+    header("location: main/signup.php?error=Invalid Email.");
     exit();
 }
 if (pwdMatch($Password, $Passwordrp) !== false){
-    header("location: main/signup.php?error=passworddontmatch");
+    header("location: main/signup.php?error=Password didn't match.");
     exit();
 }
 if (emailexists($conn, $email) !== false){
-    header("location: main/signup.php?error=emailtaken");
+    header("location: main/signup.php?error=Email Address is Already Exist.");
     exit();
 }
 createuser($conn, $email, $Password, $First_Name, $Last_Name, $Gender, $Contact_no, $Address, $vkey);
@@ -41,6 +42,8 @@ else{
     header("location: main/signup.php");
     exit();
 }
+
+
 
 //if (isset($_GET['delete'])){
   //  $id = $_GET['delete'];

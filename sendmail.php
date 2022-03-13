@@ -382,7 +382,7 @@ if (!$mail->send()){
 }
 else {
     // echo "Message has been sent";
-    header("location: ty.php");
+    header("location: ty.php?email=$email");
     
     exit();
 }

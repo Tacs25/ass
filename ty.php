@@ -39,17 +39,21 @@
 
         
     </style>
-<body>
-
-<h2>Thank you! We have sent verification link. <br>
-<i class="bi bi-envelope-exclamation-fill"
-style="font-size: 11rem; color: green; "></i> </h2> 
-
-
-
-
-
     
+<body>
+<?php 
+	if (isset($_GET["email"])){
+        $email = $_GET['email'];
+    }
+            ?>
+<h2> <b>Thank you! </b> <br> 
+    Please verify your email <em><?php echo $email ?> </em>to complete registration. <br> 
+    Kindly check spam if it is not there. <br>
+    <i class="bi bi-envelope-exclamation-fill"
+    style="font-size: 11rem; color: green; "></i> </h2>
+
+
+
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>

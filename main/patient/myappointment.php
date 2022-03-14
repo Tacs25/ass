@@ -10,14 +10,13 @@
 	<br>
 
 	<?php 
-							if (isset($_GET["error"])){
-								if ($_GET["error"] === "canceled"){
-									?>
+							if (isset($_GET["canceledsuccess"])){
+								 ?>
 									<div class="alert alert-danger" role="alert">
 										Canceled Appointment.
 									</div>
+							
 								<?php
-								}
 							}
 							?>
 
@@ -39,7 +38,7 @@
 			      			</tr>
 			      		</thead>
 						<?php
-							$id = $_SESSION['id'];
+							$id = $_SESSION['user'];
 							date_default_timezone_set('Asia/Manila');
 							$date = date('Y-m-d');
 							$time = date('H:i:s');
@@ -49,6 +48,7 @@
 						<form method="post" action="../includes/cancel.inc.php">
 			      		<tbody>
 						  <tr>
+						  <input type="hidden" name="User_ID" value="<?php echo $row['User_ID'];?>">
 						  <td><input type="hidden" name="id" value="<?php echo $row['ID'];?>"><?php echo $row['ID'];?></td>
 						  <td><input type="hidden" name="appid" value="<?php echo $row['Appointment_ID'];?>"><?php echo $row['Appointment_ID'];?></td>
                             <td><input type="hidden" name="sched" value="<?php echo $row['sched'];?>"><?php echo $row['sched'];?></td>
@@ -80,7 +80,7 @@
 						
 							</div>
 
-							<input type="hidden" name="User_ID" value="<?php echo $row['User_ID'];?>">
+							
 							<?php }
 							else {}
 							?>

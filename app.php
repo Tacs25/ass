@@ -144,8 +144,9 @@
                           date_default_timezone_set('Asia/Manila');
                           $date = date('Y-m-d');
                           $time = date('H:i:s');
-                        	$result = $conn->query("SELECT * FROM booked WHERE sched >= '$date' order by id desc");
+                        	$result = $conn->query("SELECT * FROM booked WHERE sched >= '$date' OR status = 'done' order by sched asc, start_time asc");
                           $resultt = $conn->query("UPDATE appointment set status = 'unbooked' WHERE sched < '$date'");
+                          $resultss = $conn->query("UPDATE appointment set status = 'done' WHERE status = 'booked' AND sched < '$date'");
                           $resulttt = $conn->query("UPDATE booked set status = 'done' WHERE status = 'booked' AND sched < '$date'");
                           while ($row = $result->fetch_assoc()){
                         ?>
@@ -159,13 +160,15 @@
                             <td><input type="hidden" name="startt" value="<?php echo $row['start_time'];?>"><?php echo $row['start_time'];?></td>
                             <td><input type="hidden" name="endd" value="<?php echo $row['end_time'];?>"><?php echo $row['end_time'];?></td>
 							              <td><input type="hidden" name="stats" value="<?php echo $row['status'];?>"><?php echo $row['status'];?></td>
-                            <td><?php if ($row['status'] === 'canceled' || $row['status'] === 'doctorcanceled'){?>
+                            <td><?php if ($row['status'] === 'canceled' || $row['status'] === 'doctorcanceled' || $row['status'] === 'done'|| $row['status'] === 'noshow'){?>
                               <input type="submit" name ="archive" class="btn btn-success" value ="Archive"/>
                               <?php
                             }
                               else {
                               ?>
                             <input type="submit" name ="cancel" class="btn btn-danger" value ="Cancel"/>
+                            <input type="submit" name ="noshow" class="btn btn-danger" value ="NoShow"/>
+                            
                             <?php
                               }
                             ?>
@@ -177,7 +180,7 @@
 							            }
 					  	          ?>
                         <form method="post" action="main/includes/archiveall.inc.php">
-                        <input type="submit" name ="archiveall" class="btn btn-success" value ="Archive All"/>
+                        <input type="submit" name ="archiveall" class="btn btn-success" value ="Archive All (Done/Unbooked)"/>
                         </form>
                       </table>
                     </div>

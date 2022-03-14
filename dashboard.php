@@ -120,9 +120,15 @@
         </div>
 
         <?php
+              date_default_timezone_set('Asia/Manila');
+              $date = date('Y-m-d');
+              $time = date('H:i:s');
+              $resultts = $conn->query("UPDATE appointment set status = 'unbooked' WHERE sched <= '$date' AND status = 'available'");
+              $resultss = $conn->query("UPDATE appointment set status = 'done' WHERE status = 'booked' AND sched < '$date'");
+              $resulttt = $conn->query("UPDATE booked set status = 'done' WHERE status = 'booked' AND sched < '$date'");
               $result = $conn->query("SELECT count(*) AS count FROM data");
               $row = $result->fetch_assoc();
-              $resultt = $conn->query("SELECT count(*) AS count FROM booked");
+              $resultt = $conn->query("SELECT count(*) AS count FROM booked WHERE status = 'available'");
               $rows = $resultt->fetch_assoc();
         ?>
 
@@ -164,7 +170,7 @@
           <div class="col-md-6 pt-3">
             <div class="card bg-success text-white h-100">
               <div class="card-body py-4">
-                <h2><?php echo $row['count'];?></h2>
+                <h2><?php echo $rows['count'];?></h2>
               </div>
               <div class="card-footer d-flex">
                TOTAL OF APPOINTMENT

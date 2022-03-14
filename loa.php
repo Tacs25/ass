@@ -141,10 +141,11 @@ include_once 'main/includes/dbh.inc.php';
                           <tbody>
                           <?php
                           $result = $conn->query("SELECT * FROM data order by id desc");
+                          
                           while ($row = $result->fetch_assoc()){
                           ?>
                             <tr>
-                              <td><?php echo $row['ID'];?></td>
+                              <td><?php echo $row['User_ID'];?></td>
                               <td><?php echo $row['First_Name'];?></td>
                               <td><?php echo $row['Last_Name'];?></td>
                               <td><?php echo $row['Email'];?></td>

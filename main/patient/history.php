@@ -27,7 +27,7 @@
 			      			</tr>
 			      		</thead>
 						<?php
-							$id = $_SESSION['id'];
+							$id = $_SESSION['user'];
                         	$result = $conn->query("SELECT * FROM archive WHERE User_ID = '$id'");
                           	while ($row = $result->fetch_assoc()){
                         ?>

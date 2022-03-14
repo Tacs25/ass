@@ -234,7 +234,7 @@ include_once 'main/includes/dbh.inc.php'
                         date_default_timezone_set('Asia/Manila');
                         $date = date('Y-m-d');
                         $time = date('H:i:s');
-                        $result = $conn->query("SELECT * FROM appointment WHERE sched >= '$date'");
+                        $result = $conn->query("SELECT * FROM appointment WHERE sched >= '$date' AND status ='available'");
                           while ($row = $result->fetch_assoc()){
                         ?>
                         <form method="post" action="del.php ">

@@ -12,7 +12,7 @@ if(isset($_SESSION['id'])){
 				 
 			
 		</div>
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark mt-4"  \">
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark mt-4">
   		<!-- Brand -->
   		<a class="navbar-brand" href="#"><?php echo $row['First_Name']?> <?php echo $row['Last_Name']?></a>
 		  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">

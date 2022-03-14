@@ -16,6 +16,10 @@ if (isset($_POST['edit_button'])){
     //header("location: ../signup.php?error=emptyinput");
     //exit();
 //}
+if (invalidContact($Contact_no) !== false){
+    header("location: main/edit.php?error=invalidContact&&last=$Last_Name&&email=$email&&first=$First_Name&&address=$Address");
+    exit();
+}
 
 edit($conn, $First_Name, $Last_Name, $Contact_no, $Address, $idd);
 }

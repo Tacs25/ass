@@ -16,29 +16,99 @@
 				<div class="card-body">
 				<?php 
 							if (isset($_GET["error"])){
+								if ($_GET["error"] === "emptyinput"){
+									?>
+									<div class="alert alert-danger" role="alert">
+										Fill Empty Input.
+									</div>
+								<?php
+								}
 								
-								?>
-								<div class="alert alert-danger" role="alert">
-									<?php echo $_GET['error']; ?>
-								</div>
-							<?php
+								else if ($_GET["error"] === "invalidemail"){
+									?>
+									<div class="alert alert-danger" role="alert">
+										Invalid Email.
+									</div>
+								<?php
+								}
 								
+								else if($_GET["error"] === "passworddontmatch"){
+									?>
+									<div class="alert alert-danger" role="alert">
+										Password didn't match.
+									</div>
+									
+								<?php
+								}
+								
+								else if ($_GET["error"] === "somethingwentwrong"){
+									?>
+									<div class="alert alert-danger" role="alert">
+										Something went wrong.
+									</div>
+									
+								<?php
+								}
+								
+								else if ($_GET["error"] === "emailtaken"){
+									?>
+									<div class="alert alert-danger" role="alert">
+										Email Already Exist.
+										</div>
+								<?php
+								}
+								else if ($_GET["error"] === "invalidfirstname"){
+									?>
+									<div class="alert alert-danger" role="alert">
+										Invalid First Name.
+										</div>
+								<?php
+								}
+								else if ($_GET["error"] === "invalidlastname"){
+									?>
+									<div class="alert alert-danger" role="alert">
+										Invalid Last Name.
+										</div>
+								<?php
+								}
+								else if ($_GET["error"] === "invalidContact"){
+									?>
+									<div class="alert alert-danger" role="alert">
+										Invalid Contact Number.
+										</div>
+								<?php
+								}
+								else if ($_GET["error"] === "selectgender"){
+									?>
+									<div class="alert alert-danger" role="alert">
+										Please Select Gender.
+										</div>
+								<?php
+								}
 							}
 							?>
-								
 					<form method="post" id="patient_register_form" action="../signup.inc.php">
 						<div class="row">
 								<div class="col-md-6">
 									<div class="form-group">
-										
+									<?php if (isset($_GET['first'])){?>
 										<label>First Name<span class="text-danger"></label>
-										<input type="text" name="patient_first_name" id="patient_first_name" class="form-control"  value = "" required   />
+										<input type="text" name="patient_first_name" id="patient_first_name" required value = "<?php echo $_GET['first']; ?>"class="form-control" required   />
+										<?php } else {?>
+										<label>First Name<span class="text-danger"></label>
+										<input type="text" name="patient_first_name" id="patient_first_name" class="form-control" required   />
+										<?php }?>
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="form-group">
+									<?php if (isset($_GET['last'])){?>
 										<label>Last Name<span class="text-danger"></label>
-										<input type="text" name="patient_last_name" id="patient_last_name" class="form-control"  value ="" required   />
+										<input type="text" name="patient_last_name" id="patient_last_name" required value = "<?php echo $_GET['last']; ?>" class="form-control" required   />
+										<?php } else { ?>
+										<label>Last Name<span class="text-danger"></label>
+										<input type="text" name="patient_last_name" id="patient_last_name" class="form-control" required   />
+										<?php }?>
 									</div>
 								</div>
 							</div>
@@ -46,21 +116,32 @@
 						
 						<div class="form-group">
 							<label>Gender<span class="text-danger"></label>
-								<select name="patient_gender" id="patient_gender" class="form-select" required>
-									<option value"" disabled selected hidden>--Select Gender--</option>
+								<select required name="patient_gender" id="patient_gender" class="form-control" autofocus required>
+									<option><p>--Select Gender--</p></option>
 									<option value="Male">Male</option>
 									<option value="Female">Female</option>
 									<option value="Other">Other</option>
 								</select>
 						</div>
 						<div class="form-group">
+						<?php if (isset($_GET['contact'])){
+							$contact = $_GET['contact'];?>
+							<label>Contact No.<span class="text-danger"></label><br>
+							<input type="tel"  name="patient_phone_no" id="patient_phone_no" class="form-control" required value = "+<?php echo "$contact"; ?>"required   />
+							<?php } else {?>
 							<label>Contact No.<span class="text-danger"></label>
-							<input type="tel"  name="patient_phone_no" id="patient_phone_no" class="form-control" placeholder="09123456321" pattern="[0-9]{11}"required   />
+							<input type="tel"  name="patient_phone_no" id="patient_phone_no" class="form-control" required value = "+63"required   />
+							<?php }?>
 						</div>
 						
 						<div class="form-group">
+						<?php if (isset($_GET['email'])){?>
+							<label>Email Address<span class="text-danger"></label>
+							<input type="text" name="patient_email_address" id="patient_email_address" required value = "<?php echo $_GET['email']; ?>"class="form-control" required />
+							<?php } else {?>
 							<label>Email Address<span class="text-danger"></label>
 							<input type="text" name="patient_email_address" id="patient_email_address" class="form-control" required />
+							<?php }?>
 						</div>
 						<div class="form-group">
 
@@ -69,7 +150,7 @@
 							<input type="password" name="patient_password" id="patient_password" class="form-control" required  />
 							<div class="input-group-prepend">
 								<div class="input-group-text">
-									<a href="#" class="text-dark" id="icon-click">
+									<a  class="text-dark" id="icon-click">
 										<i class="fas fa-eye" id="icon"></i>
 									</a>
 								</div>
@@ -77,13 +158,12 @@
 							</div>
 						</div>
 						<div class="form-group">
-
 							<label>Confirm Password<span class="text-danger"></label>
 							<div class="input-group">
 							<input type="password" name="patient_passwordrp" id="patient_passwordrp" class="form-control" required  />
 							<div class="input-group-prepend">
 							<div class="input-group-text">
-									<a href="#" class="text-dark" id="icon-click1">
+									<a  class="text-dark" id="icon-click1">
 										<i class="fas fa-eye" id="icon1"></i>
 									</a>
 								</div>
@@ -91,8 +171,13 @@
 							</div>
 						</div>
 						<div class="form-group">
+						<?php if (isset($_GET['address'])){?>
+							<label>Address<span class="text-danger"></label>
+							<textarea name="patient_address" id="patient_address" class="form-control" required ><?php echo $_GET['address']; ?></textarea>
+							<?php } else {?>
 							<label>Address<span class="text-danger"></label>
 							<textarea name="patient_address" id="patient_address" class="form-control" required ></textarea>
+							<?php }?>
 						</div>
 						<div class="form-group text-center">
 							<input type="hidden" name="action" value="patient_register" />

@@ -128,13 +128,17 @@ function sendmail_getmail($email, $id, $appid, $idd, $sched, $startt, $endd, $Fi
     }
 }
 
-function sendmail_usercanc($id, $idd,$sched){
+function sendmail_usercanc($id, $idd, $sched, $First_Name , $Last_Name, $appid, $startt, $endd){
     $mailTo = "asuncion.optical.clinic@gmail.com";
 
     $sched1 = date('M d, Y', strtotime($sched));
-    $body = "<h2>The User with a User ID of #$idd </h2>
-    <h5>Has canceled an appointment booking at this date $sched1 </h5>
-    <h5>With a booking Id of #$id</h5>
+    $startt1  = date('h:i A', strtotime($startt));
+    $endd1  = date('h:i A', strtotime($endd));
+
+   
+    $body = "<h2>Canceled Appointment</h2>
+    <p><b>#$idd $First_Name $Last_Name</b> has successfully cancelled an appointment on  <br>
+    <b>$sched1, $startt1 to $endd1 <b> with an appointment number of <b>$appid</b>.</p>
     <br/><br/>";
     
     $mail = new PHPMailer(true);
@@ -154,8 +158,8 @@ function sendmail_usercanc($id, $idd,$sched){
     
     $mail->Port = "587";
     
-    $mail->From = "jan-jan.riparip.student@access.edu.ph";
-    $mail->FromName = "Client";
+    $mail->From = "zanreno06@gmail.com";
+    $mail->FromName = "$First_Name";
     
     $mail->addAddress($mailTo, "Zan");
     $mail->SMTPOptions=array('ssl'=>array(
@@ -179,14 +183,18 @@ function sendmail_usercanc($id, $idd,$sched){
     }
 }
 
-function sendmail_book($id, $idd,$sched){
+function sendmail_book($id, $idd, $sched,  $First_Name , $Last_Name, $startt, $endd){
     $mailTo = "asuncion.optical.clinic@gmail.com";
-
+    
     $sched1 = date('M d, Y', strtotime($sched));
-    $body = "<h2>The User with a User ID of #$idd </h2>
-    <h5>Has booked an appointment at this date $sched1</h5>
-    <h5>With an appointment Id of #$id</h5>
+    $startt1  = date('h:i A', strtotime($startt));
+    $endd1  = date('h:i A', strtotime($endd));
+   
+    $body = "<h2> Booked Appointment </h2>
+    <p><b>#$idd $First_Name $Last_Name</b> has successfully booked an appointment on  <br>
+    <b>$sched1, $startt1 to $endd1 </b> with an appointment number of <b>$id</b>.</p>
     <br/><br/>";
+    
     
     $mail = new PHPMailer(true);
     //$mail = new PHPMailer\PHPMailer\PHPMailer;
@@ -206,7 +214,7 @@ function sendmail_book($id, $idd,$sched){
     $mail->Port = "587";
     
     $mail->From = "zanreno06@gmail.com";
-    $mail->FromName = "Client";
+    $mail->FromName = "$First_Name";
     
     $mail->addAddress($mailTo, "Zan");
     $mail->SMTPOptions=array('ssl'=>array(
@@ -230,11 +238,18 @@ function sendmail_book($id, $idd,$sched){
     }
 }
 
-function sendmail_cancel($email, $sched){
+function sendmail_cancel($email, $sched, $First_Name, $Last_Name ){
 $mailTo = $email;
 $sched1 = date('M d, Y', strtotime($sched));
-$body = "<h2>UNFORTUNATELY THE DOCTOR IS NOT AVAILABLE</h2>
-<p>Your appointment at this date <strong>$sched1</strong> has been canceled.</p>
+$body = "<h2>Canceled Appointment</h2>
+<p>Dear <b>$First_Name $Last_Name</b>, </p>
+<p> Our scheduled appointment was off on <b>$sched1</b> but due to some emergency/urgent <br>
+piece of work, I am sorry to notify you that we will have to cancel our <br>
+scheduled appointment.<br>
+I am sorry for any inconvenience. 
+</p>
+
+<strong><em>Asuncion Optical </em></strong>
 <br/><br/>";
 
 $mail = new PHPMailer(true);
@@ -279,11 +294,75 @@ else {
 }
 }
 
-function sendmail_forgot($email){
+function sendmail_noshow($email, $sched, $First_Name){
+    $mailTo = $email;
+    $sched1 = date('M d, Y', strtotime($sched));
+    $body = "<h2>Missed Appointment</h2>
+    <p>Hi <strong>$First_Name,</strong></p> 
+    <p>This is a friendly reminder that you had missed an appointment scheduled <br>
+    for you on <strong>$sched1</strong>.</p>
+    <p>Please be advised that not attending your scheduled appointment will lead to your account, <br>
+    <strong> Getting Locked after 3 No Show status, </strong><br>
+    Please use the cancel button if you happen <br>
+    to have an emergency at your chosen schedule <br>
+    Thank You for Your Understanding
+    </p> 
+    <p>Regards, <br>
+    <strong><em>Asuncion Optical </em></strong>
+    </p>
+    ";
+    
+    $mail = new PHPMailer(true);
+    //$mail = new PHPMailer\PHPMailer\PHPMailer;
+    
+    //$mail->SMTPDebug = 3;
+    
+    $mail->isSMTP();
+    
+    $mail->Host = "smtp.gmail.com";
+    $mail->SMTPAuth = true;
+    
+    $mail->Username = "zanreno06@gmail.com";
+    $mail->Password = "ecaabcwxcnzojaxt";
+    
+    $mail->SMTPSecure = "tls";
+    
+    $mail->Port = "587";
+    
+    $mail->From = "zanreno06@gmail.com";
+    $mail->FromName = "AsuncionOptical";
+    
+    $mail->addAddress($mailTo, "Zan");
+    $mail->SMTPOptions=array('ssl'=>array(
+        'verify_peer'=>false,
+        'verify_peer_name'=>false,
+        'allow_self_signed'=>false
+    ));
+    
+    $mail->isHTML(true);
+    
+    $mail->Subject = "Missed Appointment";
+    $mail->Body = $body;
+    $mail->AltBody = "This is the Plain text version of the email content";
+    
+    if (!$mail->send()){
+        echo "Mailer Error". $mail->ErrorInfo;
+    }
+    else {
+        header("location: ../../app.php?noshow");
+        exit();
+    }
+    }
+
+function sendmail_forgot($email, $First_Name){
 $mailTo = $email;
-$body = "<h2>Forgot Password Verification Link</h2>
-<h5><em>Verify your email to change your password with the given link below.</em></h5>
-<br/><br/>
+$body = "<h2>Forgot Password Reset Link</h2>
+<p>Hi <b>$First_Name,</b></p>
+<p>Forgot your password? <br>
+We received a request to reset the password for your account.
+</p>
+<p><em><b>Ignore this message if you didn't request such thing.</b></em></p>
+<p>To reset your password, click the link below.</p>
 <a href='http://localhost/ass/changeforgot.php?error=$email'>Click Here</a></h1>";
 
 $mail = new PHPMailer(true);
@@ -315,7 +394,7 @@ $mail->SMTPOptions=array('ssl'=>array(
 
 $mail->isHTML(true);
 
-$mail->Subject = "Forgot Password Verify";
+$mail->Subject = "Forgot Password";
 $mail->Body = $body;
 $mail->AltBody = "This is the Plain text version of the email content";
 
@@ -323,7 +402,7 @@ if (!$mail->send()){
     echo "Mailer Error". $mail->ErrorInfo;
 }
 else {
-    header("location: ty.php");
+    header("location: forgotmessage.php?email=$email");
     exit();
 }
 }

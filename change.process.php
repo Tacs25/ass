@@ -17,7 +17,7 @@ if (pwdMatch($Password, $Passwordrp) !== false){
 $hashedpwd = password_hash($Password, PASSWORD_DEFAULT);
 $sql = $conn->query("UPDATE data SET Pass = '$hashedpwd' WHERE Email = '$email'");
 if($sql){
-    header("location: main/login.php?success");
+    header("location: main/login.php?error=success");
     exit();
 }
 

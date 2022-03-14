@@ -39,6 +39,23 @@
 									
 								<?php
 								}
+								else if ($_GET["error"] === "invalidemai"){
+									?>
+									<div class="alert alert-danger" role="alert">
+										Invalid Email.
+									</div>
+									
+								<?php
+								}
+									
+								else if ($_GET["error"] === "success"){
+									?>
+									<div class="alert alert-success" role="alert">
+										Password Changed Successfully.
+									</div>
+									
+								<?php
+								}
 							}
 							?>
 					<form method="post" id="patient_login_form" action="includes/login.inc.php">

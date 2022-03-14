@@ -1,6 +1,50 @@
 <?php
 include_once 'dbh.inc.php';
 
+function selectgender($Gender){
+    $regex = "/^[a-zA-Z]+$/";
+    $result;
+    if (preg_match($regex,$Gender)){
+        $result = false;
+    }
+    else {
+        $result = true;
+    }
+    return $result;
+}
+function invalidFirstName($First_Name,){
+    $regex = "/^[a-zA-Z\s]+$/";
+    $result;
+    if (preg_match($regex,$First_Name)){
+        $result = false;
+    }
+    else {
+        $result = true;
+    }
+    return $result;
+}
+function invalidLastName($Last_Name){
+    $regex = "/^[a-zA-Z\s]+$/";
+    $result;
+    if (preg_match($regex,$Last_Name)){
+        $result = false;
+    }
+    else {
+        $result = true;
+    }
+    return $result;
+}
+function invalidContact($Contact_no){
+    $regex = "/^(\+639)\d{9}$/";
+    $result;
+    if (preg_match($regex,$Contact_no)){
+        $result = false;
+    }
+    else {
+        $result = true;
+    }
+    return $result;
+}
 function emptyInputSignup($email, $Password, $Passwordrp, $First_Name, $Last_Name, $Gender, $Contact_no, $Address){
     $result;
     if (empty($email) || empty($Password) || empty($Passwordrp) || empty($First_Name) || empty($Last_Name) || empty($Gender) || empty($Contact_no) || empty($Address)){
@@ -35,7 +79,7 @@ function datemailex($conn, $sched, $idd, $stats){
     $sql = "SELECT * FROM booked WHERE sched = ?  AND User_ID = ? AND status = ?;";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)){
-        header("location: ../signup.php?error=Emailtaken!");
+        header("location: ../signup.php?error=somethingwenwrong!");
         exit();
     }
     mysqli_stmt_bind_param($stmt, "sss", $sched, $idd, $stats);   
@@ -51,6 +95,18 @@ function datemailex($conn, $sched, $idd, $stats){
         return $result;
     }
     mysqli_stmt_close($stmt);
+}
+function datemailexex($conn, $id, $idd){
+    $resultt = $conn->query("SELECT * FROM archive WHERE Appointment_ID = $id  AND User_ID = $idd");
+
+    if ($resultt){
+        $row = true;
+        return $row;
+    }
+    else{
+        $result = false;
+        return $result;
+    }
 }
 function emailexdit($conn, $email, $idd){
     $sql = "SELECT * FROM data WHERE Email = ? AND ID != ?;";
@@ -114,6 +170,16 @@ function createuser($conn, $email, $Password, $First_Name, $Last_Name, $Gender, 
     mysqli_stmt_bind_param($stmt, "ssssssss", $email, $hashedpwd, $First_Name, $Last_Name, $Gender, $Contact_no, $Address, $vkey);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
+    $last_id = mysqli_insert_id($conn);
+    if ($last_id){
+        $code = rand(1,99999);
+        $user_id = "AO";
+        $user_id .= $code;
+        $user_id .= "N";
+        $user_id .= $last_id;
+        $ss = $conn->query("UPDATE data SET User_ID = '$user_id' WHERE ID = '$last_id'");
+        $sss = $conn->query("INSERT INTO profileimg (User_ID, status) VALUES ('$user_id', '0')");
+    }
     if($sql){
         sendmail_verify("$email", "$vkey", "$First_Name");
 
@@ -152,6 +218,7 @@ function loginUser($conn, $email, $Password){
         session_start();
         $_SESSION["id"] = $Emailexists["ID"]; 
         $_SESSION["email"] = $Emailexists["Email"];
+        $_SESSION["user"] = $Emailexists["User_ID"];
         header("location: ../patient/profile.php");
         exit();
     }

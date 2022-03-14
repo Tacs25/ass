@@ -11,6 +11,7 @@ if (isset($_POST['archiveall'])){
     $s = $conn->query("DELETE FROM appointment WHERE status = 'unbooked'");
     header("location: ../../app.php?error=none");
     $ss = $conn->query("DELETE FROM booked WHERE status = 'done'");
+    $sss = $conn->query("DELETE FROM appointment WHERE status = 'done'");
     exit();
 }
 else{

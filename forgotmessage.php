@@ -33,9 +33,6 @@
             left: 50%;
             transform: translateX(-50%) translateY(-50%);
             }
-        a{
-            font-size: 30px;
-        }
 
        
 
@@ -44,16 +41,16 @@
     </style>
 <body>
 
-<h2> <b>Thank you!</b> <br>
-Your Account has been verified you may now log in. <br>
-<i class="bi bi-envelope-check-fill"
-style="font-size: 11rem; color: green; "></i> <br>
-
-<a href="../login.php"> Login your Account</a>
-</h2> 
-
-
-
+<?php 
+	if (isset($_GET["email"])){
+        $email = $_GET['email'];
+    }
+            ?>
+<h2> <b> Password Reset Email </b> <br> 
+    Please check your email <em><?php echo $email ?> </em> for reset password link. <br> 
+    Kindly check spam if it is not there. <br>
+    <i class="bi bi-envelope-exclamation-fill"
+    style="font-size: 11rem; color: green; "></i> </h2>
 
     
 <!-- JavaScript Bundle with Popper -->

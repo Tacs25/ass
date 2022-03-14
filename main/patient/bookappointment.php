@@ -30,7 +30,7 @@
 						date_default_timezone_set('Asia/Manila');
 						$date = date('Y-m-d');
 						$time = date('H:i:s');
-                        $result = $conn->query("SELECT * FROM appointment WHERE sched >= '$date' AND status = 'available' order by id desc");
+                        $result = $conn->query("SELECT * FROM appointment WHERE sched > '$date' AND status = 'available' order by sched asc, start_time asc");
                           while ($row = $result->fetch_assoc()){
                         ?>
 						<form method="post" action="../includes/booking.inc.php">
@@ -79,6 +79,13 @@
 								?>
 									<script>
 									swal("Cancel", "Successfully", "success");
+									</script>
+					  			<?php
+					 		 }
+							else if ($_GET["error"] === "youcancel"){
+								?>
+									<script>
+									swal("Oops!", "You cancelled this appointment last time ", "warning");
 									</script>
 					  			<?php
 					 		 }
